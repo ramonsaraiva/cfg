@@ -1,10 +1,13 @@
-export PS1='\u@\H:\w$ '
-export CLICOLOR=1
+export ZSH=/Users/ramon/.oh-my-zsh
 
-PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-fi
+ZSH_THEME="robbyrussell"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
