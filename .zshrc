@@ -17,7 +17,8 @@ NEW_RELIC_CONFIG_FILE=~/.newrelic.ini
 export NVM_DIR="/Users/ramon/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-alias ca="source ~/.ca"
+alias ca="source ~/bin/ca"
+alias sca="source ~/bin/sca"
 alias qca="pyenv deactivate ca"
 
 function myclone() {
@@ -25,6 +26,7 @@ function myclone() {
 }
 
 alias gcm=myclone
+alias cpyc="find . -name '*.pyc' -delete"
 alias celp="./manage.py celery purge"
 alias cel="./manage.py celeryd -l info -Q celery"
 alias red="redis-server"
