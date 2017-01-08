@@ -1,0 +1,38 @@
+[user]
+    email = ramonsaraiva@gmail.com
+    name = Ramon Saraiva
+
+[alias]
+    st = status
+    ci = commit
+    cia = commit --all
+    co = checkout
+    nb = checkout -b  # create and switch to a new branch (mnemonic: "git new branch branchname...")
+    chunkyadd = add --patch  # stage commits chunk by chunk
+    amend = commit --amend
+
+    # display easy to ready, colorized graph of commit history
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+
+    # Lists all incoming or outgoing commits
+    # >> git incoming origin
+    outgoing = !git fetch && git log FETCH_HEAD..
+    incoming = !git fetch && git log ..FETCH_HEAD
+
+    # Remove a specific file from the staging area
+    # >> git unstage README.md
+    unstage = reset HEAD --
+
+    d = diff  # diff unstaged changes
+    dc = diff --cached  # diff staged changes
+
+    # Fetch a specific pull request from a Github repository and check it out by pull request id
+    # git pr <remote> <pull request>
+    # >> git pr origin 123
+    pr = "!f() { git fetch -fu $1 refs/pull/$2/head:pr/$2; git checkout pr/$2; } ; f"
+
+    # Delete all branches created using above pr alias
+    prc = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+
+    # Delete all branches that have been pulled in to master
+    delete-merged-branches = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
