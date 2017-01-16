@@ -9,8 +9,8 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+eval "$(pyenv init - zsh)"
+eval "$(pyenv virtualenv-init - zsh)"
 
 NEW_RELIC_CONFIG_FILE=~/.newrelic.ini
 
