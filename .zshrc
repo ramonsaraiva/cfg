@@ -30,6 +30,7 @@ alias gcm=myclone
 alias ca="source ~/bin/ca"
 alias sca="source ~/bin/sca"
 alias qca="pyenv deactivate ca"
+source lapi="source ~/bin/lapi"
 
 alias m=managepy
 alias celp="./manage.py celery purge"
