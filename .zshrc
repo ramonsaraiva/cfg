@@ -25,7 +25,12 @@ function myclone() {
     git clone git@github.com:ramonsaraiva/$@
 }
 
+function managepy() {
+    python manage.py $@
+}
+
 alias gcm=myclone
+alias m=managepy
 alias cpyc="find . -name '*.pyc' -delete"
 alias celp="./manage.py celery purge"
 alias cel="./manage.py celeryd -l info -Q celery"
