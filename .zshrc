@@ -35,5 +35,6 @@ alias m=managepy
 alias celp="./manage.py celery purge"
 alias cel="./manage.py celeryd -l info -Q celery"
 alias red="redis-server"
+alias rf="redis-cli FLUSHALL"
 alias rs="./manage.py runserver"
 alias cpyc="find . -name '*.pyc' -delete"
