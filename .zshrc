@@ -29,6 +29,7 @@ alias gcm=myclone
 
 alias ca="source ~/bin/ca"
 alias sca="source ~/bin/sca"
+alias kca="source ~/bin/kca"
 alias qca="pyenv deactivate ca"
 alias lapi="source ~/bin/lapi"
 
