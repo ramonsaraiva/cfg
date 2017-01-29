@@ -17,6 +17,8 @@ NEW_RELIC_CONFIG_FILE=~/.newrelic.ini
 export NVM_DIR="/Users/ramon/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+export PGDATA=/usr/local/var/postgres
+
 function myclone() {
     git clone git@github.com:ramonsaraiva/$@
 }
