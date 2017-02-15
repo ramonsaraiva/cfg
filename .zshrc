@@ -27,6 +27,12 @@ function managepy() {
     python manage.py $@
 }
 
+function codecov() {
+    coverage run manage.py test $1
+    coverage xml
+    coverage report -m | grep $1
+}
+
 alias gcm=myclone
 
 alias ca="source ~/bin/ca"
@@ -42,3 +48,4 @@ alias red="redis-server"
 alias rf="redis-cli FLUSHALL"
 alias rs="./manage.py runserver"
 alias cpyc="find . -name '*.pyc' -delete"
+alias cov=codecov
