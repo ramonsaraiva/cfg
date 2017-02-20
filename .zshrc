@@ -33,6 +33,11 @@ function codecov() {
     coverage report -m | grep $1
 }
 
+function workon() {
+    pyenv activate $1
+    cd ~/dev/$1
+}
+
 alias gcm=myclone
 
 alias ca="source ~/bin/ca"
@@ -40,6 +45,7 @@ alias sca="source ~/bin/sca"
 alias kca="source ~/bin/kca"
 alias qca="pyenv deactivate ca"
 alias lapi="source ~/bin/lapi"
+alias wo=workon
 
 alias m=managepy
 alias celp="./manage.py celery purge"
