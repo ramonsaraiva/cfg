@@ -68,6 +68,8 @@ function codecov() {
     coverage report -m | grep $1
 }
 
+alias vim="nvim"
+
 alias gcm=myclone
 
 alias ca=ca
