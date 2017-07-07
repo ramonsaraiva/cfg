@@ -35,7 +35,8 @@
     # Delete all branches created using above pr alias
     prc = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
 
-    ps = !git co staging && git pull ca staging
+    ps = !git co --quiet staging && git pull ca staging
+    pm = !git co --quiet master && git pull ca master
 
     # Delete all branches that have been pulled in to master
     delete-merged-branches = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
