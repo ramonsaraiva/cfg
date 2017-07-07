@@ -7,6 +7,7 @@
     ci = commit
     cia = commit --all
     co = checkout
+    b = branch
     nb = checkout -b  # create and switch to a new branch (mnemonic: "git new branch branchname...")
     chunkyadd = add --patch  # stage commits chunk by chunk
     amend = commit --amend
@@ -34,7 +35,11 @@
     # Delete all branches created using above pr alias
     prc = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
 
+    ps = !git co staging && git pull ca staging
+
     # Delete all branches that have been pulled in to master
     delete-merged-branches = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
+
+    cb = !git branch | grep -v "master" | grep -v "staging" | xargs git branch -D
 [core]
 	editor = /usr/bin/vim
