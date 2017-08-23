@@ -88,5 +88,6 @@ alias kcel="kill $(ps aux | grep '[c]elery' | awk '{print $2}')"
 alias red="redis-server"
 alias rf="redis-cli FLUSHALL"
 alias rs="./manage.py runserver"
+alias rsp="./manage.py runserver_plus"
 alias cpyc="find . -name '*.pyc' -delete"
 alias cov=codecov
