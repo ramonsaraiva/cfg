@@ -14,7 +14,8 @@ eval $(thefuck --alias)
 eval "$(pyenv init - zsh)"
 eval "$(pyenv virtualenv-init - zsh)"
 
-NEW_RELIC_CONFIG_FILE=~/.newrelic.ini
+export NEW_RELIC_CONFIG_FILE=~/.newrelic.ini
+export NEW_RELIC_ENVIRONMENT=development
 
 export NVM_DIR="/Users/ramon/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -46,11 +47,6 @@ function kca() {
     kill $(ps aux | grep '[p]ython' | awk '{print $2}')
 }
 
-function lapi() {
-    pyenv activate lapi
-    cd ~/dev/leads-api
-}
-
 function workon() {
     pyenv activate $1
     cd ~/dev/$1
@@ -78,7 +74,6 @@ alias ca=ca
 alias sca=sca
 alias kca=kca
 alias qca="pyenv deactivate ca"
-alias lapi=lapi
 alias wo=workon
 
 alias m=managepy
