@@ -84,5 +84,6 @@ alias red="redis-server"
 alias rf="redis-cli FLUSHALL"
 alias rs="./manage.py runserver"
 alias rsp="./manage.py runserver_plus"
+alias nrs="newrelic-admin run-python manage.py runserver_plus"
 alias cpyc="find . -name '*.pyc' -delete"
 alias cov=codecov
