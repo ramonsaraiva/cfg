@@ -1,6 +1,6 @@
 export ZSH=/Users/ramon/.oh-my-zsh
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="muse"
 
 plugins=(
     autoenv,
