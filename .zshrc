@@ -22,7 +22,7 @@ export NEW_RELIC_ENVIRONMENT=development
 
 export NVM_DIR="/Users/ramon/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export CONTAINER_ENVIRONMENT='local'
+export CONTAINER_ENVIRONMENT='self'
 
 export PGDATA=/usr/local/var/postgres
 
