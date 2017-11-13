@@ -1,0 +1,45 @@
+function sca() {
+    ca()
+    find . -name '*.pyc' -delete
+    sudo nginx
+    mysql.server start
+    ./manage.py celery purge
+    ./manage.py celeryd -l info -Q celery &
+    redis-server &
+    ./manage.py runserver
+}
+
+function kca() {
+    sudo nginx -s stop
+    mysql.server stop
+    kill $(ps aux | grep '[r]edis' | awk '{print $2}')
+    kill $(ps aux | grep '[c]elery' | awk '{print $2}')
+    kill $(ps aux | grep '[p]ython' | awk '{print $2}')
+}
+
+function workon() {
+    pyenv activate $1
+    cd ~/dev/$1
+}
+
+function managepy() {
+    python manage.py $@
+}
+
+alias vim="nvim"
+
+alias ca=ca
+alias sca=sca
+alias kca=kca
+alias qca="pyenv deactivate ca"
+
+alias m=managepy
+alias celp="./manage.py celery purge"
+alias cel="./manage.py celeryd -l info -Q celery"
+alias kcel="kill $(ps aux | grep '[c]elery' | awk '{print $2}')"
+alias rf="redis-cli FLUSHALL"
+alias rs="./manage.py runserver"
+alias rsp="./manage.py runserver_plus"
+alias nrs="newrelic-admin run-python manage.py runserver_plus"
+alias cpyc="find . -name '*.pyc' -delete"
+alias cov=codecov
