@@ -29,4 +29,4 @@ function ca() {
     cd ~/dev/consumeraffairs
 }
 
-[ -f .aliases ] && source .aliases
+[ -f ~/.cfg/.aliases ] && source ~/.cfg/.aliases
