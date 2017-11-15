@@ -4,7 +4,8 @@ function ca() {
 }
 
 function sca() {
-    ca()
+    pyenv activate ca
+    cd ~/dev/consumeraffairs
     find . -name '*.pyc' -delete
     sudo nginx
     mysql.server start
