@@ -24,9 +24,4 @@ export CONTAINER_ENVIRONMENT='self'
 
 export PGDATA=/usr/local/var/postgres
 
-function ca() {
-    pyenv activate ca
-    cd ~/dev/consumeraffairs
-}
-
 [ -f ~/.cfg/.aliases ] && source ~/.cfg/.aliases
