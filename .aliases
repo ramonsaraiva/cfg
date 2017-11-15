@@ -22,29 +22,23 @@ function kca() {
     kill $(ps aux | grep '[p]ython' | awk '{print $2}')
 }
 
-function workon() {
-    pyenv activate $1
-    cd ~/dev/$1
-}
-
-function managepy() {
+function m() {
     python manage.py $@
 }
 
 alias vim="nvim"
 
 alias ca=ca
+alias qca="pyenv deactivate ca"
 alias sca=sca
 alias kca=kca
-alias qca="pyenv deactivate ca"
 
-alias m=managepy
+alias m=m
 alias celp="./manage.py celery purge"
 alias cel="./manage.py celeryd -l info -Q celery"
 alias kcel="kill $(ps aux | grep '[c]elery' | awk '{print $2}')"
 alias rf="redis-cli FLUSHALL"
-alias rs="./manage.py runserver"
-alias rsp="./manage.py runserver_plus"
+alias rs="python manage.py runserver"
+alias rsp="python manage.py runserver_plus"
 alias nrs="newrelic-admin run-python manage.py runserver_plus"
 alias cpyc="find . -name '*.pyc' -delete"
-alias cov=codecov
