@@ -32,4 +32,5 @@ export CONTAINER_ENVIRONMENT='self'
 
 export PGDATA=/usr/local/var/postgres
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.cfg/.aliases ] && source ~/.cfg/.aliases
