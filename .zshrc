@@ -2,6 +2,7 @@ if [[ "$OSTYPE" == 'darwin' ]]; then
     HOME=/Users/ramon
 elif [[ "$OSTYPE" == 'linux-gnu' ]]; then
     HOME=/home/ramon
+    setxkbmap -option caps:escape 
 fi
 
 export ZSH=$HOME/.oh-my-zsh
@@ -34,3 +35,4 @@ export PGDATA=/usr/local/var/postgres
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.cfg/.aliases ] && source ~/.cfg/.aliases
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
