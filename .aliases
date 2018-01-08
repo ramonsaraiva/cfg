@@ -4,11 +4,15 @@ function ca() {
 }
 
 function sca() {
-    pyenv activate ca
     cd ~/dev/consumeraffairs
     find . -name '*.pyc' -delete
-    sudo nginx
-    mysql.server start
+    if [[ "$OSTYPE" == 'darwin' ]]; then
+        sudo nginx
+        mysql.server start
+    elif [[ "$OSTYPE" == 'linux-gnu' ]]; then
+        sudo service nginx start
+        sudo service mysql start
+    fi
     ./manage.py celery purge
     ./manage.py celeryd -l info -Q celery &
     redis-server &
@@ -16,8 +20,13 @@ function sca() {
 }
 
 function kca() {
-    sudo nginx -s stop
-    mysql.server stop
+    if [[ "$OSTYPE" == 'darwin' ]]; then
+        sudo nginx -s stop
+        mysql.server stop
+    elif [[ "$OSTYPE" == 'linux-gnu' ]]; then
+        sudo service nginx stop
+        sudo service mysql stop
+    fi
     kill $(ps aux | grep '[r]edis' | awk '{print $2}')
     kill $(ps aux | grep '[c]elery' | awk '{print $2}')
     kill $(ps aux | grep '[p]ython' | awk '{print $2}')
