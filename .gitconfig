@@ -41,6 +41,6 @@
     # Delete all branches that have been pulled in to master
     delete-merged-branches = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
 
-    cb = !git branch | grep -v "master" | grep -v "staging" | xargs git branch -D
+    cb = !git branch | grep -v "master" | grep -v "staging" | grep -v "qa" | xargs git branch -D
 [core]
-	editor = /usr/bin/vim
+	editor = /usr/local/bin/nvim
