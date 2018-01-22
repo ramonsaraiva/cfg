@@ -6,7 +6,7 @@ function ca() {
 function sca() {
     cd ~/dev/consumeraffairs
     find . -name '*.pyc' -delete
-    if [[ "$OSTYPE" == 'darwin' ]]; then
+    if [[ "$OSTYPE" == 'darwin17' ]]; then
         sudo nginx
         mysql.server start
     elif [[ "$OSTYPE" == 'linux-gnu' ]]; then
@@ -20,7 +20,7 @@ function sca() {
 }
 
 function kca() {
-    if [[ "$OSTYPE" == 'darwin' ]]; then
+    if [[ "$OSTYPE" == 'darwin17' ]]; then
         sudo nginx -s stop
         mysql.server stop
     elif [[ "$OSTYPE" == 'linux-gnu' ]]; then
