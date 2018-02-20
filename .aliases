@@ -34,17 +34,31 @@ function kca() {
 
 function ball() {
     cd ~/dev/styleguide/frontend
-    git co qa
-    git pull ca qa
+    if [[ $# == 0 ]] || [[ $1 == 'qa' ]]; then
+        git co qa
+        git pull ca qa
+    else
+        git pr ca $1
+    fi
     gulp b
     gulp b -d ../../consumeraffairs/media
+
     cd ~/dev/frontend
-    git co qa
-    git pull ca qa
+    if [[ $# == 0 ]] || [[ $2 == 'qa' ]]; then
+        git co qa
+        git pull ca qa
+    else
+        git pr ca $2
+    fi
     gulp b
+
     cd ~/dev/consumeraffairs
-    git co qa
-    git pull ca qa
+    if [[ $# == 0 ]] || [[ $3 == 'qa' ]]; then
+        git co qa
+        git pull ca qa
+    else
+        git pr ca $3
+    fi
     gulp docker
 }
 
