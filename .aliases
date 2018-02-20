@@ -32,6 +32,22 @@ function kca() {
     kill $(ps aux | grep '[p]ython' | awk '{print $2}')
 }
 
+function ball() {
+    cd ~/dev/styleguide/frontend
+    git co qa
+    git pull ca qa
+    gulp b
+    gulp b -d ../../consumeraffairs/media
+    cd ~/dev/frontend
+    git co qa
+    git pull ca qa
+    gulp b
+    cd ~/dev/consumeraffairs
+    git co qa
+    git pull ca qa
+    gulp docker
+}
+
 function m() {
     python manage.py $@
 }
@@ -42,6 +58,7 @@ alias ca=ca
 alias qca="pyenv deactivate ca"
 alias sca=sca
 alias kca=kca
+alias ball=ball
 
 alias m=m
 alias celp="./manage.py celery purge"
