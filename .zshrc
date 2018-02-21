@@ -2,6 +2,7 @@ if [[ "$OSTYPE" == 'darwin' ]]; then
     HOME=/Users/ramon
 elif [[ "$OSTYPE" == 'linux-gnu' ]]; then
     HOME=/home/ramon
+    # capslock to esc
     setxkbmap -option caps:escape 
 fi
 
@@ -10,9 +11,21 @@ ZSH_THEME="muse"
 
 plugins=(
     autoenv,
+    celery,
+    django,
+    docker,
+    encode64,
     git,
+    jira,
+    pip,
+    pyenv,
+    python,
+    pip,
+    redis-cli,
+    supervisor,
     vi-mode,
-    zsh-autosuggestions
+    zsh-autosuggestions,
+    web-search,
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -35,4 +48,4 @@ export PGDATA=/usr/local/var/postgres
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.cfg/.aliases ] && source ~/.cfg/.aliases
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
