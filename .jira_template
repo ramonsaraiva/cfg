@@ -1,15 +1,29 @@
-h2. Job Story
+h3. User Story
 
+As a ___, I want to ___ so that I can ___.
 
+h3. Description
 
-h2. Description
+Paragraph/descriptive information
 
+h3. Considerations
 
+* Design: link
+* Tracking needs
+* SEO implications
+* Feature considerations
+* etc
 
-h2. Technical Approach
+h3. Technical Approach
 
+SA tech specs and considerations
 
+h3. QA Approach
 
-h2. Acceptance Criteria
+QA notes and considerations
 
-* 
+h3. Acceptance Criteria
+ 
+# item
+# item
+# item 
