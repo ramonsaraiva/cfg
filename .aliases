@@ -1,35 +1,5 @@
 function ca() {
-    pyenv activate ca
-    cd ~/dev/consumeraffairs
-}
-
-function sca() {
-    cd ~/dev/consumeraffairs
-    find . -name '*.pyc' -delete
-    if [[ "$OSTYPE" == 'darwin17' ]]; then
-        sudo nginx
-        mysql.server start
-    elif [[ "$OSTYPE" == 'linux-gnu' ]]; then
-        sudo service nginx start
-        sudo service mysql start
-    fi
-    ./manage.py celery purge
-    ./manage.py celeryd -l info -Q celery &
-    redis-server &
-    ./manage.py runserver
-}
-
-function kca() {
-    if [[ "$OSTYPE" == 'darwin17' ]]; then
-        sudo nginx -s stop
-        mysql.server stop
-    elif [[ "$OSTYPE" == 'linux-gnu' ]]; then
-        sudo service nginx stop
-        sudo service mysql stop
-    fi
-    kill $(ps aux | grep '[r]edis' | awk '{print $2}')
-    kill $(ps aux | grep '[c]elery' | awk '{print $2}')
-    kill $(ps aux | grep '[p]ython' | awk '{print $2}')
+    cd ~/src/consumeraffairs
 }
 
 function ball() {
@@ -69,15 +39,10 @@ function m() {
 alias vim="nvim"
 
 alias ca=ca
-alias qca="pyenv deactivate ca"
-alias sca=sca
-alias kca=kca
 alias ball=ball
 
 alias m=m
 alias celp="./manage.py celery purge"
-alias cel="./manage.py celeryd -l info -Q celery"
-alias kcel="kill $(ps aux | grep '[c]elery' | awk '{print $2}')"
 alias rf="redis-cli FLUSHALL"
 alias rs="python manage.py runserver"
 alias rsp="python manage.py runserver_plus"
