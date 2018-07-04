@@ -43,4 +43,4 @@
 
     cb = !git branch | grep -v "master" | grep -v "staging" | grep -v "qa" | xargs git branch -D
 [core]
-	editor = /usr/local/bin/nvim
+	editor = \\vim
