@@ -49,3 +49,5 @@ export PGDATA=/usr/local/var/postgres
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.cfg/.aliases ] && source ~/.cfg/.aliases
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+tmux
