@@ -6,29 +6,17 @@ elif [[ "$OSTYPE" == 'linux-gnu' ]]; then
     setxkbmap -option caps:escape 
 fi
 
-export ZSH=$HOME/.oh-my-zsh
+plugins=(tmux git vi-mode zsh-autosuggestions)
+
 ZSH_THEME="muse"
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART_ONCE=true
+ZSH_TMUX_AUTOCONNECT=true
+ZSH_TMUX_AUTOQUIT=false
 
-plugins=(
-    autoenv,
-    celery,
-    django,
-    docker,
-    encode64,
-    git,
-    jira,
-    pip,
-    pyenv,
-    python,
-    pip,
-    redis-cli,
-    supervisor,
-    vi-mode,
-    zsh-autosuggestions,
-    web-search,
-)
-
+export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 export PYENV_ROOT="$HOME/.pyenv"
@@ -51,4 +39,3 @@ export PGDATA=/usr/local/var/postgres
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 set -o vi
-tmux
