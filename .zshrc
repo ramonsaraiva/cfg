@@ -38,4 +38,6 @@ export PGDATA=/usr/local/var/postgres
 [ -f ~/.cfg/.aliases ] && source ~/.cfg/.aliases
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+[[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
+
 set -o vi
