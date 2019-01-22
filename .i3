@@ -13,7 +13,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:Hack 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -150,7 +150,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
+    position top
     i3bar_command i3bar -t
+    status_command i3status
+    height 15
 }
 
 for_window [class=".*"] border pixel 0
