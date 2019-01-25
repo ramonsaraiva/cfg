@@ -2,7 +2,6 @@ if [[ "$OSTYPE" == 'darwin' ]]; then
     HOME=/Users/ramon
 elif [[ "$OSTYPE" == 'linux-gnu' ]]; then
     HOME=/home/ramon
-    # capslock to esc
     setxkbmap -option caps:escape 
 fi
 
@@ -29,7 +28,7 @@ export NEW_RELIC_CONFIG_FILE=~/.newrelic.ini
 export NEW_RELIC_ENVIRONMENT=development
 
 export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 export CONTAINER_ENVIRONMENT='self'
 
 export PGDATA=/usr/local/var/postgres
