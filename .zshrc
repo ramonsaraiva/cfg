@@ -1,10 +1,3 @@
-if [[ "$OSTYPE" == 'darwin' ]]; then
-    HOME=/Users/ramon
-elif [[ "$OSTYPE" == 'linux-gnu' ]]; then
-    HOME=/home/ramon
-    setxkbmap -option caps:escape 
-fi
-
 plugins=(brew django docker git jira npm pyenv python redis-cli tmux urltools vi-mode zsh-autosuggestions)
 
 ZSH_THEME="muse"
@@ -16,7 +9,7 @@ ZSH_TMUX_AUTOQUIT=false
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
