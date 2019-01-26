@@ -5,7 +5,7 @@ elif [[ "$OSTYPE" == 'linux-gnu' ]]; then
     setxkbmap -option caps:escape 
 fi
 
-plugins=(brew git jira tmux vi-mode zsh-autosuggestions)
+plugins=(brew django docker git jira npm pyenv python redis-cli tmux urltools vi-mode zsh-autosuggestions)
 
 ZSH_THEME="muse"
 ZSH_TMUX_AUTOSTART=true
