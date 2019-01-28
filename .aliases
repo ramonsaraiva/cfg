@@ -2,6 +2,22 @@ function ca() {
     cd ~/src/consumeraffairs
 }
 
+function brands() {
+    cd ~/src/brands
+}
+
+function leads() {
+    cd ~/src/leads-api
+}
+
+function catracking() {
+    cd ~/src/catracking
+}
+
+function userdb() {
+    cd ~/src/userdb
+}
+
 function ball() {
     cd ~/dev/styleguide/frontend
     if [[ $# == 0 ]] || [[ $1 == 'qa' ]]; then
@@ -39,6 +55,10 @@ function m() {
 alias vim="nvim"
 
 alias ca=ca
+alias brands=brands
+alias leads=leads
+alias catracking=catracking
+alias userdb=userdb
 alias ball=ball
 
 alias m=m
