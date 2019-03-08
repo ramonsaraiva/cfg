@@ -1,3 +1,7 @@
+if [[ "$OSTYPE" == 'linux-gnu' ]]; then
+    setxkbmap -option caps:escape
+fi
+
 plugins=(brew django docker git jira npm pyenv python redis-cli tmux urltools vi-mode zsh-autosuggestions)
 
 ZSH_THEME="muse"
@@ -25,6 +29,9 @@ export NVM_DIR=$HOME/.nvm
 export CONTAINER_ENVIRONMENT='self'
 
 export PGDATA=/usr/local/var/postgres
+
+export SSHKEY=$(<~/.ssh/id_rsa)
+export KNOWN_HOSTS=$(ssh-keyscan github.com)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.cfg/.aliases ] && source ~/.cfg/.aliases
