@@ -31,7 +31,7 @@ export CONTAINER_ENVIRONMENT='self'
 export PGDATA=/usr/local/var/postgres
 
 export SSHKEY=$(<~/.ssh/id_rsa)
-export KNOWN_HOSTS=$(ssh-keyscan github.com)
+export KNOWN_HOSTS=$(ssh-keyscan github.com 2> /dev/null)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.cfg/.aliases ] && source ~/.cfg/.aliases
