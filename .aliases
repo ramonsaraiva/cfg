@@ -70,3 +70,15 @@ alias rsl="python manage.py runserver 0.0.0.0:8001"
 alias rsm="python manage.py runserver 0.0.0.0:8002"
 alias nrs="newrelic-admin run-python manage.py runserver_plus"
 alias cpyc="find . -name '*.pyc' -delete"
+
+alias d=docker
+alias dp="d ps"
+alias di="d images"
+alias dl="d logs"
+alias ds="docker stop $(docker ps -a -q)"
+
+alias dc=docker-compose
+alias dcu="dc up"
+alias dcd="dc down"
+alias dcp="dc ps"
+alias dce="dc exec"
