@@ -18,36 +18,6 @@ function userdb() {
     cd ~/src/userdb
 }
 
-function ball() {
-    cd ~/dev/styleguide/frontend
-    if [[ $# == 0 ]] || [[ $1 == 'qa' ]]; then
-        git co qa
-        git pull ca qa
-    else
-        git pr ca $1
-    fi
-    gulp b
-    gulp b -d ../../consumeraffairs/media
-
-    cd ~/dev/frontend
-    if [[ $# == 0 ]] || [[ $2 == 'qa' ]]; then
-        git co qa
-        git pull ca qa
-    else
-        git pr ca $2
-    fi
-    gulp b
-
-    cd ~/dev/consumeraffairs
-    if [[ $# == 0 ]] || [[ $3 == 'qa' ]]; then
-        git co qa
-        git pull ca qa
-    else
-        git pr ca $3
-    fi
-    gulp docker
-}
-
 function m() {
     python manage.py $@
 }
@@ -59,15 +29,12 @@ alias brands=brands
 alias leads=leads
 alias catracking=catracking
 alias userdb=userdb
-alias ball=ball
 
 alias m=m
 alias celp="./manage.py celery purge"
 alias rf="redis-cli FLUSHALL"
 alias rs="python manage.py runserver"
 alias rsp="python manage.py runserver_plus"
-alias rsl="python manage.py runserver 0.0.0.0:8001"
-alias rsm="python manage.py runserver 0.0.0.0:8002"
 alias nrs="newrelic-admin run-python manage.py runserver_plus"
 alias cpyc="find . -name '*.pyc' -delete"
 
