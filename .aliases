@@ -82,3 +82,6 @@ alias dcu="dc up"
 alias dcd="dc down"
 alias dcp="dc ps"
 alias dce="dc exec"
+
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
