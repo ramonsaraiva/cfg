@@ -39,6 +39,9 @@
 
 !! URxvt Appearance
 URxvt.font: xft:monospace:size=11
+URxvt.boldFont: xft:monospace:size=11
+URxvt.italicFont: xft:monospace:size=11
+URxvt.boldItalicfont: xft:monospace:size=11
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
