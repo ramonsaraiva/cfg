@@ -23,8 +23,8 @@ apt-get install neovim
 
 ### audio
 
-* install pavucontrol `apt-get install pavucontrol`
-*if pavucontrol fails to connect to pulseaudio, run `pulseaudio --start`*
+* install pavucontrol `apt-get install pavucontrol` 
+*(if pavucontrol fails to connect to pulseaudio, run `pulseaudio --start`)*
 
 ### browser
 
@@ -64,9 +64,9 @@ ln -s ~/.cfg/.gitconfig .gitconfig
 ln -s ~/.cfg/.i3 .config/i3/config
 ln -s ~/.cfg/.i3status.conf .config/i3/.i3status.conf
 ```
-* install docker `https://docs.docker.com/install/linux/docker-ce/debian/`
-* install docker-compose `https://docs.docker.com/compose/install/`
-* docker post install `https://docs.docker.com/install/linux/linux-postinstall/` 
+* install [docker](https://docs.docker.com/install/linux/docker-ce/debian/)
+* install [docker-compose](https://docs.docker.com/compose/install/)
+* docker [post install](https://docs.docker.com/install/linux/linux-postinstall/)
 
 ### vim
 
@@ -77,5 +77,5 @@ ln -s ~/.cfg/.i3status.conf .config/i3/.i3status.conf
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
-* open vim and run :PlugInstall
+* open vim and run `:PlugInstall`
 * install ripgrep `apt-get install ripgrep`
