@@ -56,14 +56,26 @@ apt-get install ssh
 * create .cfg `git clone git@github.com:ramonsaraiva/macfiles .cfg`
 * create symlinks from .cfg
 ```
-ln -s .cfg/.Xresources .Xresources
-ln -s .cfg/.Xinitrc .Xinitrc
-ln -s .cfg/.tmux.conf .tmux.conf
-ln -s .cfg/.zshrc .zhsrc
-ln -s .cfg/.gitconfig .gitconfig
-ln -s .cfg/.i3 .config/i3/config
-ln -s .cfg/.i3status.conf .config/i3/.i3status.conf
+ln -s ~/.cfg/.Xresources .Xresources
+ln -s ~/.cfg/.Xinitrc .Xinitrc
+ln -s ~/.cfg/.tmux.conf .tmux.conf
+ln -s ~/.cfg/.zshrc .zhsrc
+ln -s ~/.cfg/.gitconfig .gitconfig
+ln -s ~/.cfg/.i3 .config/i3/config
+ln -s ~/.cfg/.i3status.conf .config/i3/.i3status.conf
 ```
 * install docker `https://docs.docker.com/install/linux/docker-ce/debian/`
 * install docker-compose `https://docs.docker.com/compose/install/`
 * docker post install `https://docs.docker.com/install/linux/linux-postinstall/` 
+
+### vim
+
+* create .vim `git clone git@github.com:ramonsaraiva/dotvim .vim`
+* create symlink `ln -s ~/.vim/.nvimrc .config/nvim/init.vim`
+* download vim-plug
+```
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+* open vim and run :PlugInstall
+* install ripgrep `apt-get install ripgrep`
