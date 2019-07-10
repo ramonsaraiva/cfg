@@ -44,6 +44,7 @@ apt-get install zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 * change default shell `chsh -s $(which zsh)`
+* install ranger `apt-get install ranger`
 
 ### dev
 
