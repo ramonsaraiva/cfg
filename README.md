@@ -2,13 +2,13 @@
 
 ## setting it up
 
-### apt, X and wm
+### apt, terminal, X and wm
 * update and upgrade apt
 ```
 apt-get update
 apt-get upgrade
 ```
-
+* install urxvt terminal `apt-get install rxvt-unicode`
 * install X and i3wm
 ```
 apt-get install xorg i3
@@ -31,9 +31,8 @@ apt-get install neovim
 * install firefox ESR `apt-get install firefox-esr`
 * download and install google chrome `dpkg -i ...`
 
-### terminal
+### terminal tooling
 
-* install urxvt terminal `apt-get install rxvt-unicode`
 * install tmux & plugins
 ```
 apt-get install tmux
