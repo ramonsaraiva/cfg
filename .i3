@@ -153,11 +153,11 @@ bar {
     position top
     i3bar_command i3bar -t
     status_command i3status
-    height 15
+    #height 15
 }
 
 for_window [class=".*"] border pixel 0
 exec --no-startup-id xset r rate 200 50
 
-gaps inner 10
-gaps outer 2
+#gaps inner 10
+#gaps outer 2
