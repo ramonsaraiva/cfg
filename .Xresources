@@ -1,23 +1,11 @@
-!! Colorscheme
+URxvt.foreground: #ffffff
 
-URxvt.background: [100]#282828
-URxvt.foreground: #ebdbb2
-! Black + DarkGrey
-URxvt.color0: #282828
-URxvt.color8: #7c6f64
-! DarkRed + Red
-URxvt.color1: #fb4934
-URxvt.color9: #cc241d
-
-!! URxvt Appearance
-URxvt.font: xft:monospace:size=11
-URxvt.boldFont: xft:monospace:size=11
-URxvt.italicFont: xft:monospace:size=11
-URxvt.boldItalicfont: xft:monospace:size=11
+URxvt.font: xft:monospace:size=12
+URxvt.boldFont: xft:monospace:size=12
+URxvt.italicFont: xft:monospace:size=12
+URxvt.boldItalicfont: xft:monospace:size=12
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
-URxvt.geometry: 92x24
-URxvt.internalBorder: 2
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
 URxvt.saveline: 2048
@@ -26,3 +14,6 @@ URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
 URxvt.depth: 24
 URxvt.iso14755: false
+
+URxvt*transparent: true
+URxvt*shading: 60
