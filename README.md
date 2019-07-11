@@ -85,3 +85,8 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 * install pyenv `git clone https://github.com/pyenv/pyenv.git ~/.pyenv`
 * install pyenv virtualenv `https://github.com/pyenv/pyenv-virtualenv`
+
+### aesthetics
+
+* install feh `apt-get install feh`
+* move a background image to `~/wp/default.jpg`
