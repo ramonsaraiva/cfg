@@ -80,3 +80,8 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 ```
 * open vim and run `:PlugInstall`
 * install ripgrep `apt-get install ripgrep`
+
+### python
+
+* install pyenv `git clone https://github.com/pyenv/pyenv.git ~/.pyenv`
+* install pyenv virtualenv `https://github.com/pyenv/pyenv-virtualenv`
