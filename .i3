@@ -63,3 +63,5 @@ bar {
     i3bar_command i3bar
     status_command i3status
 }
+
+for_window [class="^.*"] border pixel 0
