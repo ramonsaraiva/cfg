@@ -57,13 +57,13 @@ apt-get install ssh
 * create .cfg `git clone git@github.com:ramonsaraiva/macfiles .cfg`
 * create symlinks from .cfg
 ```
+ln -s ~/.cfg/.xsessionrc .xsessionrc
 ln -s ~/.cfg/.Xresources .Xresources
-ln -s ~/.cfg/.Xinitrc .Xinitrc
+ln -s ~/.cfg/.i3 .config/i3/config
+ln -s ~/.cfg/.i3status.conf .config/i3/.i3status.conf
 ln -s ~/.cfg/.tmux.conf .tmux.conf
 ln -s ~/.cfg/.zshrc .zhsrc
 ln -s ~/.cfg/.gitconfig .gitconfig
-ln -s ~/.cfg/.i3 .config/i3/config
-ln -s ~/.cfg/.i3status.conf .config/i3/.i3status.conf
 ```
 * install [docker](https://docs.docker.com/install/linux/docker-ce/debian/)
 * install [docker-compose](https://docs.docker.com/compose/install/)
