@@ -65,3 +65,5 @@ bar {
 }
 
 for_window [class="^.*"] border pixel 0
+
+exec --no-startup-id feh --bg-scale '/home/ramon/wp/default.jpg'
