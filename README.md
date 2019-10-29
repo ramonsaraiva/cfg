@@ -31,21 +31,6 @@ apt-get install neovim
 * install firefox ESR `apt-get install firefox-esr`
 * download and install google chrome `dpkg -i ...`
 
-### terminal tooling
-
-* install tmux & plugins
-```
-apt-get install tmux
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-* install zsh & ohmyzsh
-```
-apt-get install zsh
-sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
-* change default shell `chsh -s $(which zsh)`
-* install ranger `apt-get install ranger`
-
 ### dev
 
 * install git & ssh
@@ -60,14 +45,29 @@ apt-get install ssh
 ln -s ~/.cfg/.xsessionrc .xsessionrc
 ln -s ~/.cfg/.Xresources .Xresources
 ln -s ~/.cfg/.i3 .config/i3/config
-ln -s ~/.cfg/.i3status.conf .config/i3/.i3status.conf
+ln -s ~/.cfg/.i3status.conf .i3status.conf
 ln -s ~/.cfg/.tmux.conf .tmux.conf
-ln -s ~/.cfg/.zshrc .zhsrc
+ln -s ~/.cfg/.zshrc .zshrc
 ln -s ~/.cfg/.gitconfig .gitconfig
 ```
 * install [docker](https://docs.docker.com/install/linux/docker-ce/debian/)
 * install [docker-compose](https://docs.docker.com/compose/install/)
 * docker [post install](https://docs.docker.com/install/linux/linux-postinstall/)
+
+### terminal tooling
+
+* install tmux & plugins
+```
+apt-get install tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+* install zsh & ohmyzsh
+```
+apt-get install zsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+* change default shell `chsh -s $(which zsh)`
+* install ranger `apt-get install ranger`
 
 ### vim
 
