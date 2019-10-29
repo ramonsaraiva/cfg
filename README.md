@@ -26,6 +26,10 @@ apt-get install neovim
 * install pavucontrol `apt-get install pavucontrol` 
 *(if pavucontrol fails to connect to pulseaudio, run `pulseaudio --start`)*
 
+### fonts
+
+sudo apt install fonts-firacode
+
 ### browser
 
 * install firefox ESR `apt-get install firefox-esr`
