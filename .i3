@@ -67,3 +67,6 @@ bar {
 for_window [class="^.*"] border pixel 0
 
 exec --no-startup-id feh --bg-scale '/home/ramon/wp/default.jpg'
+
+for_window [instance="scratchpad"] move window to scratchpad, scratchpad show, move position 600px 0px
+bindsym $mod+p exec --no-startup-id urxvt -name scratchpad -e python3
