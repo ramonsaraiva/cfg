@@ -1,7 +1,7 @@
-URxvt.font: xft:monospace:size=12:Regular
-URxvt.boldFont: xft:monospace:size=12:Bold
-URxvt.italicFont: xft:monospace:size=12:Italic
-URxvt.boldItalicfont: xft:monospace:size=12:Bold:Italic
+URxvt.font: xft:Fira Code:size=12:Retina
+URxvt.boldFont: xft:Fira Code:size=12:Bold
+URxvt.italicFont: xft:Fira Code:size=12:Retina
+URxvt.boldItalicfont: xft:Fira Code:size=12:Bold
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.cursorBlink: true
@@ -14,7 +14,7 @@ URxvt.depth: 24
 URxvt.iso14755: false
 
 URxvt*transparent: true
-URxvt*shading: 60
+URxvt*shading: 80
 
 *background:       #151515
 *foreground:       #ffffff
