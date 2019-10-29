@@ -68,5 +68,6 @@ for_window [class="^.*"] border pixel 0
 
 exec --no-startup-id feh --bg-scale '/home/ramon/wp/default.jpg'
 
-for_window [instance="scratchpad"] move window to scratchpad, scratchpad show, move position 600px 0px
+for_window [instance="scratchpad"] move window to scratchpad, scratchpad show, move position 600px 0px, resize set 1200 400, border pixel 3
 bindsym $mod+p exec --no-startup-id urxvt -name scratchpad -e python3
+bindsym $mod+r exec --no-startup-id urxvt -name scratchpad -e ranger
