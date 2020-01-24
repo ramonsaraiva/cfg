@@ -94,3 +94,4 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 * install feh `apt-get install feh`
 * move a background image to `~/wp/default.jpg`
+* screenshot manager `apt-get install flameshot`
