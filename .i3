@@ -74,4 +74,6 @@ bindsym $mod+r exec --no-startup-id urxvt -name scratchpad -e ranger
 bindsym --release Print exec "flameshot gui"
 
 bindsym $mod+Shift+p exec xrandr --output HDMI-1 --primary --mode 1920x1080 --primary --rotate normal --output HDMI-2 --mode 1280x720 --left-of HDMI-1 --noprimary
+bindsym $mod+Shift+o exec xrandr --output HDMI-1 --primary --mode 1920x1080 --primary --rotate normal --output HDMI-2 --off
 bindsym $mod+Shift+f exec xrandr --output HDMI-1 --primary --mode 3840x1080 --primary --rotate normal --output HDMI-2 --mode 1280x720 --left-of HDMI-1 --noprimary
+bindsym $mod+Shift+d exec xrandr --output HDMI-1 --primary --mode 3840x1080 --primary --rotate normal --output HDMI-2 --off
