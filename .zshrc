@@ -21,6 +21,9 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
 eval "$(pyenv virtualenv-init - zsh)"
 
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1
+
 export NEW_RELIC_CONFIG_FILE=~/.newrelic.ini
 export NEW_RELIC_ENVIRONMENT=development
 
