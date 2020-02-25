@@ -1,5 +1,5 @@
 set $mod Mod1
-font pango:Fira Code 12
+font pango:Operator Mono 12
 
 floating_modifier $mod
 

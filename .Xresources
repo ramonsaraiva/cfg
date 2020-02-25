@@ -1,9 +1,24 @@
-URxvt.font: xft:Fira Code:size=12:Retina
-URxvt.boldFont: xft:Fira Code:size=12:Bold
-URxvt.italicFont: xft:Fira Code:size=12:Retina
-URxvt.boldItalicfont: xft:Fira Code:size=12:Bold
-URxvt.letterSpace: 0
-URxvt.lineSpace: 0
+Xft.dpi: 96
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: none
+
+! fonts
+#define operatorRegular xft:Operator Mono Lig Book:pixelsize=17:style=Regular:weight=300:antialias=true, \
+                        xft:FiraFlott:pixelsize=17:style=Medium, \
+                        xft:Fira Code:pixelsize=17:style=Medium
+#define operatorItalic xft:Operator Mono Lig Book:pixelsize=17:style=Italic
+#define firaFont xft:Fira Code:size=12:Bold
+
+URxvt.font: operatorRegular
+URxvt.boldFont: operatorRegular
+URxvt.italicFont: operatorRegular
+URxvt.boldItalicfont: operatorRegular
+URxvt.letterSpace: -1
+URxvt.lineSpace: 1
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
 URxvt.saveline: 2048
@@ -16,30 +31,24 @@ URxvt.iso14755: false
 URxvt*transparent: true
 URxvt*shading: 80
 
-*background:       #151515
-*foreground:       #ffffff
-!black
-*color0:           #111111
-*color8:           #505050
-!red
-*color1:           #b04020
-*color9:           #dd4010
-!green
-*color2:           #afd700
-*color10:          #daff30
-!yellow
-*color3:           #f7cf0a
-!*color11:          #fce70d
-*color11:          #ff9600
-!blue
-*color4:           #3060aa
-*color12:          #6099dd
-!magenta
-*color5:           #d6156c
-*color13:          #fe4365
-!cyan
-*color6:           #a0c2de
-*color14:          #c9dee8
-!white
-*color7:           #cacaca
-*color15:          #b0b0b0
+*.foreground:    #ABB2BF
+*.background:    #1E2127
+*.cursorColor:   #5C6370
+*.highlightColor:#3A3F4B
+
+*.color0:        #1E2127
+*.color8:        #5C6370
+*.color1:        #E06C75
+*.color9:        #E06C75
+*.color2:        #98C379
+*.color10:       #98C379
+*.color3:        #D19A66
+*.color11:       #D19A66
+*.color4:        #61AFEF
+*.color12:       #61AFEF
+*.color5:        #C678DD
+*.color13:       #C678DD
+*.color6:        #56B6C2
+*.color14:       #56B6C2
+*.color7:        #ABB2BF
+*.color15:       #FFFFFF
