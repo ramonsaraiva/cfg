@@ -1,3 +1,6 @@
+shell:
+  program: /usr/bin/zsh
+
 font:
   size: 14
   weight: 200
