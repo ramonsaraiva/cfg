@@ -1,6 +1,14 @@
 shell:
   program: /usr/bin/zsh
 
+window:
+  padding:
+    x: 5
+    y: 0
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
 font:
   size: 14
   weight: 200
