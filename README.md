@@ -75,6 +75,10 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 apt-get install zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
+* install zsh plugins (autosuggestions, etc..)
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
 * change default shell `chsh -s $(which zsh)`
 * install ranger `apt-get install ranger`
 

@@ -52,3 +52,10 @@ alias dce="dc exec"
 
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+
+function sshkey() {
+    export SSHKEY=$(<~/.ssh/id_rsa)
+    export KNOWN_HOSTS=$(ssh-keyscan github.com 2> /dev/null)
+}
+
+alias sshkey=sshkey

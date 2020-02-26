@@ -2,13 +2,9 @@ if [[ "$OSTYPE" == 'linux-gnu' ]]; then
     setxkbmap -option caps:escape
 fi
 
-plugins=(brew django docker git jira npm pyenv python redis-cli urltools vi-mode)
+plugins=(brew django docker git jira npm pyenv python redis-cli urltools vi-mode zsh-autosuggestions)
 
 ZSH_THEME="muse"
-#ZSH_TMUX_AUTOSTART=true
-#ZSH_TMUX_AUTOSTART_ONCE=true
-#ZSH_TMUX_AUTOCONNECT=true
-#ZSH_TMUX_AUTOQUIT=false
 
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -32,9 +28,6 @@ export NVM_DIR=$HOME/.nvm
 export CONTAINER_ENVIRONMENT='self'
 
 export PGDATA=/usr/local/var/postgres
-
-export SSHKEY=$(<~/.ssh/id_rsa)
-export KNOWN_HOSTS=$(ssh-keyscan github.com 2> /dev/null)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.cfg/.aliases ] && source ~/.cfg/.aliases
