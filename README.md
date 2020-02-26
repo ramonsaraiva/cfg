@@ -9,6 +9,7 @@ apt-get update
 apt-get upgrade
 ```
 * install urxvt terminal `apt-get install rxvt-unicode`
+* install alacritty terminal (with cargo for deb)
 * install X and i3wm
 ```
 apt-get install xorg i3
@@ -28,7 +29,10 @@ apt-get install neovim
 
 ### fonts
 
-sudo apt install fonts-firacode
+* sudo apt install fonts-firacode
+* install `Operator Mono` moving files to `~/.local/share/fonts`
+* flush fonts cache `fc-cache -fv`
+* make sure fonts were installed `fc-list | grep Operator\ Mono`
 
 ### browser
 
@@ -48,6 +52,7 @@ apt-get install ssh
 ```
 ln -s ~/.cfg/.xsessionrc .xsessionrc
 ln -s ~/.cfg/.Xresources .Xresources
+ln -s ~/.cfg/.alacritty.yml .alacritty.yml
 ln -s ~/.cfg/.i3 .config/i3/config
 ln -s ~/.cfg/.i3status.conf .i3status.conf
 ln -s ~/.cfg/.tmux.conf .tmux.conf
