@@ -2,13 +2,13 @@ if [[ "$OSTYPE" == 'linux-gnu' ]]; then
     setxkbmap -option caps:escape
 fi
 
-plugins=(brew django docker git jira npm pyenv python redis-cli tmux urltools vi-mode)
+plugins=(brew django docker git jira npm pyenv python redis-cli urltools vi-mode)
 
 ZSH_THEME="muse"
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOSTART_ONCE=true
-ZSH_TMUX_AUTOCONNECT=true
-ZSH_TMUX_AUTOQUIT=false
+#ZSH_TMUX_AUTOSTART=true
+#ZSH_TMUX_AUTOSTART_ONCE=true
+#ZSH_TMUX_AUTOCONNECT=true
+#ZSH_TMUX_AUTOQUIT=false
 
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh

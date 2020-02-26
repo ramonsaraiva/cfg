@@ -28,8 +28,8 @@ URxvt.urgentOnBell: true
 URxvt.depth: 24
 URxvt.iso14755: false
 
-URxvt*transparent: true
-URxvt*shading: 80
+!URxvt*transparent: true
+!URxvt*shading: 80
 
 *.foreground:    #ABB2BF
 *.background:    #1E2127

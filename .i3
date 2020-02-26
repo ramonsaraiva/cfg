@@ -3,7 +3,7 @@ font pango:Operator Mono 12
 
 floating_modifier $mod
 
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 
 bindsym $mod+Shift+q kill
 
