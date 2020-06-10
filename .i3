@@ -82,3 +82,6 @@ bindsym $mod+Shift+p exec xrandr --output DP-0 --primary --mode 1920x1080 --prim
 bindsym $mod+Shift+o exec xrandr --output DP-0 --primary --mode 1920x1080 --primary --rotate normal --output HDMI-0 --off
 bindsym $mod+Shift+f exec xrandr --output DP-0 --primary --mode 3840x1080 --primary --rotate normal --output HDMI-0 --mode 1280x720 --left-of HDMI-1 --noprimary
 bindsym $mod+Shift+d exec xrandr --output DP-0 --primary --mode 3840x1080 --primary --rotate normal --output HDMI-0 --off
+
+bindsym $mod+Ctrl+i exec setxkbmap -layout us -variant altgr-intl -option nodeadkeys
+bindsym $mod+Ctrl+p exec setxkbmap -model abnt2 -layout br -variant abnt2
