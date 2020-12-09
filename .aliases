@@ -61,3 +61,4 @@ function sshkey() {
 alias sshkey=sshkey
 
 alias restoresb="gpg -d $1 | zcat | docker exec -i silverback_postgres_1 psql -U silverback"
+alias pyb="git diff --name-status | cut -f2 | grep '.py' | xargs black"
