@@ -58,6 +58,8 @@ ln -s ~/.cfg/.i3status.conf .i3status.conf
 ln -s ~/.cfg/.tmux.conf .tmux.conf
 ln -s ~/.cfg/.zshrc .zshrc
 ln -s ~/.cfg/.gitconfig .gitconfig
+ln -s ~/.cfg/.gitignore .gitignore
+ln -s ~/.cfg/.pylintrc .pylintrc
 ```
 * install [docker](https://docs.docker.com/install/linux/docker-ce/debian/)
 * install [docker-compose](https://docs.docker.com/compose/install/)
