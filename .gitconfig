@@ -26,5 +26,5 @@
     cb = !git branch | grep -v "master" | grep -v "staging" | grep -v "qa" | xargs git branch -D
 
 [core]
-    editor = \\vim
+    editor = /usr/bin/nvim
     excludesfile = ~/.gitignore
