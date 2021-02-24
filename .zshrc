@@ -17,6 +17,8 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
 eval "$(pyenv virtualenv-init - zsh)"
 
+export PATH=$PATH:/usr/local/go/bin
+
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 
