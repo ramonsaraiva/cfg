@@ -8,12 +8,12 @@
 apt-get update
 apt-get upgrade
 ```
+* install neovim (prob nightly `from https://github.com/neovim/neovim/releases` - appimage?)
 * install urxvt terminal `apt-get install rxvt-unicode`
 * install alacritty terminal (with cargo for deb)
 * install X and i3wm
 ```
 apt-get install xorg i3
-apt-get install neovim
 ```
 
 ### boot
@@ -95,11 +95,15 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 ```
 * open vim and run `:PlugInstall`
 * install ripgrep `apt-get install ripgrep`
+* install gh `https://github.com/cli/cli/blob/trunk/docs/install_linux.md`
 
 ### python
 
 * install pyenv `git clone https://github.com/pyenv/pyenv.git ~/.pyenv`
 * install pyenv virtualenv `https://github.com/pyenv/pyenv-virtualenv`
+* install 2.7.x version for vim `g:python_host_prog`
+* install 3.x version for vim `g:python3_host_prog`
+* install black
 
 ### aesthetics
 
