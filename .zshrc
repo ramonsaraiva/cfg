@@ -17,7 +17,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
 eval "$(pyenv virtualenv-init - zsh)"
 
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/bin
 
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
@@ -27,6 +27,7 @@ export NEW_RELIC_ENVIRONMENT=development
 
 export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+eval "nvm use default"
 export CONTAINER_ENVIRONMENT='self'
 
 export PGDATA=/usr/local/var/postgres
