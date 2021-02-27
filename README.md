@@ -101,12 +101,24 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 * install pyenv `git clone https://github.com/pyenv/pyenv.git ~/.pyenv`
 * install pyenv virtualenv `https://github.com/pyenv/pyenv-virtualenv`
-* install 2.7.x version for vim `g:python_host_prog`
-* install 3.x version for vim `g:python3_host_prog`
+* install 2.7.x version for vim `g:python_host_prog` (yeah but should use shims)
+* install 3.x version for vim `g:python3_host_prog` (yeah but should use shims)
 * install black
+
+### node
+
+* install nvm
+* install lts version of node and make it default
+* install coc
 
 ### aesthetics
 
 * install feh `apt-get install feh`
 * move a background image to `~/wp/default.jpg`
 * screenshot manager `apt-get install flameshot`
+
+### hosts/dnsmasq
+
+* install `apt-get install dnsmasq`
+* copy `~/.cfg/dnsmasq.conf`
+* copy `~/.cfg/hosts`
