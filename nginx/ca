@@ -1,0 +1,45 @@
+server {
+    listen       80;
+    server_name  mainsite.local;
+
+    location / {
+        proxy_pass http://localhost:28080;
+    }
+}
+
+server {
+    listen       80;
+    server_name  silverback.local;
+
+    location / {
+        proxy_pass http://localhost:48000;
+    }
+}
+
+server {
+    listen       80;
+    server_name  leadsapi.local;
+
+    location / {
+        proxy_pass http://localhost:31000;
+    }
+}
+
+server {
+    listen       80;
+    server_name  userdb.local;
+
+    location / {
+        proxy_pass http://localhost:58000;
+    }
+}
+
+server {
+    listen       80;
+    server_name  auth.local;
+
+    location / {
+        proxy_pass http://localhost:59000;
+    }
+}
+
