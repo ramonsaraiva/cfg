@@ -38,4 +38,7 @@ export PGDATA=/usr/local/var/postgres
 
 [[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
 
+export PATH=$PATH:"$HOME/.cargo/bin"
+source $HOME/.cargo/env
+
 set -o vi
