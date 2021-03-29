@@ -3,11 +3,11 @@ font pango:Operator Mono 12
 
 floating_modifier $mod
 
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id ./kitty/bin/kitty
 
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run
 
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -61,7 +61,7 @@ bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 bar {
     position top
@@ -76,12 +76,12 @@ exec --no-startup-id feh --bg-scale '/home/ramon/wp/default.jpg'
 for_window [instance="scratchpad"] move window to scratchpad, scratchpad show, move position 600px 0px, resize set 1200 400, border pixel 3
 bindsym $mod+p exec --no-startup-id urxvt -name scratchpad -e python3
 bindsym $mod+r exec --no-startup-id urxvt -name scratchpad -e ranger
-bindsym --release Print exec "flameshot gui"
+bindsym --release Print exec --no-startup-id "flameshot gui"
 
-bindsym $mod+Shift+p exec xrandr --output DP-0 --primary --mode 1920x1080 --primary --rotate normal --output HDMI-0 --mode 1280x720 --left-of HDMI-0 --noprimary
-bindsym $mod+Shift+o exec xrandr --output DP-0 --primary --mode 1920x1080 --primary --rotate normal --output HDMI-0 --off
-bindsym $mod+Shift+f exec xrandr --output DP-0 --primary --mode 3840x1080 --primary --rotate normal --output HDMI-0 --mode 1280x720 --left-of HDMI-0 --noprimary
-bindsym $mod+Shift+d exec xrandr --output DP-0 --primary --mode 3840x1080 --primary --rotate normal --output HDMI-0 --off
+bindsym $mod+Shift+p exec --no-startup-id xrandr --output DP-0 --primary --mode 1920x1080 --primary --rotate normal --output HDMI-0 --mode 1280x720 --left-of HDMI-0 --noprimary
+bindsym $mod+Shift+o exec --no-startup-id xrandr --output DP-0 --primary --mode 1920x1080 --primary --rotate normal --output HDMI-0 --off
+bindsym $mod+Shift+f exec --no-startup-id xrandr --output DP-0 --primary --mode 3840x1080 --primary --rotate normal --output HDMI-0 --mode 1280x720 --left-of HDMI-0 --noprimary
+bindsym $mod+Shift+d exec --no-startup-id xrandr --output DP-0 --primary --mode 3840x1080 --primary --rotate normal --output HDMI-0 --off
 
-bindsym $mod+Ctrl+i exec setxkbmap -layout us -variant altgr-intl -option nodeadkeys
-bindsym $mod+Ctrl+p exec setxkbmap -model abnt2 -layout br -variant abnt2
+bindsym $mod+Ctrl+i exec --no-startup-id setxkbmap -layout us -variant altgr-intl -option nodeadkeys
+bindsym $mod+Ctrl+p exec --no-startup-id setxkbmap -model abnt2 -layout br -variant abnt2
