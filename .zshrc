@@ -27,7 +27,6 @@ export NEW_RELIC_ENVIRONMENT=development
 
 export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-eval "nvm use default"
 export CONTAINER_ENVIRONMENT='self'
 
 export PGDATA=/usr/local/var/postgres
@@ -40,5 +39,7 @@ export PGDATA=/usr/local/var/postgres
 
 export PATH=$PATH:"$HOME/.cargo/bin"
 source $HOME/.cargo/env
+
+export PATH=$PATH:/snap/bin
 
 set -o vi
