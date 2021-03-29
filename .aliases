@@ -22,6 +22,13 @@ function m() {
     python manage.py $@
 }
 
+function ca() {
+    (
+        cd ~/src/ca/env
+        make $@
+    )
+}
+
 alias vim="nvim"
 
 alias ca=ca
