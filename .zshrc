@@ -2,7 +2,7 @@ if [[ "$OSTYPE" == 'linux-gnu' ]]; then
     setxkbmap -option caps:escape
 fi
 
-plugins=(brew django docker git jira npm pyenv python redis-cli urltools vi-mode zsh-autosuggestions)
+plugins=(brew django docker git jira npm python redis-cli urltools vi-mode zsh-autosuggestions)
 
 ZSH_THEME="muse"
 
@@ -11,11 +11,9 @@ source $ZSH/oh-my-zsh.sh
 
 export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-eval "$(pyenv init - zsh)"
-eval "$(pyenv virtualenv-init - zsh)"
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init -)"
 
 export PATH=$PATH:/usr/local/bin
 
