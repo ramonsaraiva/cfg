@@ -1,5 +1,5 @@
 {
-  "settingsVersion": "1.64.3",
+  "settingsVersion": "1.67",
   "exclusionRules": [
     {
       "pattern": "https?://iogames.space/*",
@@ -164,12 +164,92 @@
     {
       "pattern": "https?://aws.ramonzera.com/*",
       "passKeys": ""
+    },
+    {
+      "pattern": "https?://krunker.io/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://krunker.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://excalidraw.com/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://excalidraw.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://admin.google.com/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://admin.google.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://app.clubhouse.io/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://app.clubhouse.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://stackedit.io/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://codeinterview.io/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://codeinterview.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.codingame.com/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://www.codingame.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://consumeraffairs.atlassian.net/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://skyline.github.com/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://skyline.github.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.3daimtrainer.com/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://www.3daimtrainer.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://github.dev/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://github.dev/*",
+      "passKeys": ""
     }
   ],
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "map 1 createTab https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+-label%3A%22automation%22+-label%3A%22Ready+for+QA%22++label%3A%22needs+a+BE+reviewer%22\nmap 2 createTab https://consumeraffairs.atlassian.net/secure/RapidBoard.jspa?rapidView=97&projectKey=ARCH\nmap 3 createTab https://consumeraffairs.atlassian.net/secure/RapidBoard.jspa?rapidView=127&projectKey=PDQ&quickFilter=668\nmap 4 createTab https://consumeraffairs.atlassian.net/browse/PDQ-3530\nmap 5 createTab https://consumeraffairs.atlassian.net/browse/PDQ-3531\nmap 6 createTab https://github.com/ramonsaraiva",
+  "keyMappings": "map 1 createTab https://consumeraffairs.atlassian.net/secure/RapidBoard.jspa?rapidView=218\nmap 2 createTab https://consumeraffairs.atlassian.net/secure/RapidBoard.jspa?rapidView=222",
   "linkHintCharacters": "sadfjklewcmpgh",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "https://google.com/",
@@ -180,7 +260,7 @@
   "scrollStepSize": 60,
   "smoothScroll": true,
   "grabBackFocus": false,
-  "searchEngines": "w: http://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\ny: http://www.youtube.com/results?search_query=%s Youtube\ngm: https://www.google.com/maps?q=%s Google maps\nnf: https://www.netflix.com/search?q=%s\n\njira: https://consumeraffairs.atlassian.net/browse/%s\ngca: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%E2%9C%93&q=is%3Apr+%s\ngcau: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A%s\ngcaf: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%s\ncapr: https://github.com/ConsumerAffairs/consumeraffairs/pull/%s",
+  "searchEngines": "w: http://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\ny: http://www.youtube.com/results?search_query=%s Youtube\ngm: https://www.google.com/maps?q=%s Google maps\nnf: https://www.netflix.com/search?q=%s\n\nlol: https://www.probuilds.net/champions/details/%s\n\njira: https://consumeraffairs.atlassian.net/browse/%s\nconfluence: https://consumeraffairs.atlassian.net/wiki/search?text=%s\n\n# mainsite campaigns\ncampaign: https://www.consumeraffairs.com/admin/companies/campaign/?q=%s\ncampaign-qa: https://qa.consumeraffairs.com/admin/companies/campaign/?q=%s\ncampaign-staging: https://staging.consumeraffairs.com/admin/companies/campaign/?q=%s\ncampaign-local: campaign-qa: http://localhost:28080/admin/companies/campaign/?q=%s\n\n# silverback endpoints\nendpoint: https://my.consumeraffairs.com/admin/landpages/endpoint/?q=%s\nendpoint-qa: https://qa-my.consumeraffairs.com/admin/landpages/endpoint/?q=%s\nendpoint-staging: https://staging-my.consumeraffairs.com/admin/landpages/endpoint/?q=%s\nendpoint-local: http://localhost:48000/admin/landpages/endpoint/?q=%s\n\n# silverback configs\nconfig: https://my.consumeraffairs.com/admin/landpages/config/%s/change/\nconfig-qa: https://qa-my.consumeraffairs.com/admin/landpages/config/%s/change/\nconfig-staging: https://staging-my.consumeraffairs.com/admin/landpages/config/%s/change/\nconfig-local: http://localhost:48000/admin/landpages/config/%s/change/\n\n# github org\ngorg: https://github.com/orgs/ConsumerAffairs/people?query=%s\n\n# github -> consumeraffairs\ngcar: https://github.com/consumeraffairs/%s\n\n# github -> consumeraffairs -> consumeraffairs\ngca: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%E2%9C%93&q=is%3Apr+%s\ngcau: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A%s\ngcaf: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%s\ngcapr: https://github.com/ConsumerAffairs/consumeraffairs/pull/%s\n\n# github -> consumeraffairs -> silverback\ngsb: https://github.com/consumeraffairs/silverback/pulls?utf8=%E2%9C%93&q=is%3Apr+%s\ngsbu: https://github.com/consumeraffairs/silverback/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A%s\ngsbpr: https://github.com/ConsumerAffairs/silverback/pull/%s\n\n# github -> consumeraffairs -> userdb\ngudb: https://github.com/consumeraffairs/userdb/pulls?utf8=%E2%9C%93&q=is%3Apr+%s\ngudbu: https://github.com/consumeraffairs/userdb/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A%s\ngudbpr: https://github.com/ConsumerAffairs/userdb/pull/%s\n\n# b64\nb64: https://www.base64%s.org/\n\ntv: https://br.tradingview.com/symbols/BMFBOVESPA-%s/\nc: https://eduardocavalcanti.com/?post_type%5B%5D=an_fundamentalista&s=%s",
   "searchUrl": "https://www.google.com/search?q=",
   "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
 }
