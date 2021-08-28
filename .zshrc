@@ -4,10 +4,13 @@ fi
 
 plugins=(brew django docker git jira npm python redis-cli urltools vi-mode zsh-autosuggestions)
 
-ZSH_THEME="muse"
+ZSH_THEME=""
 
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
+autoload -U promptinit; promptinit
+prompt pure
 
 export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 
@@ -23,15 +26,16 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 export NEW_RELIC_CONFIG_FILE=~/.newrelic.ini
 export NEW_RELIC_ENVIRONMENT=development
 
-export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# fnm > nvm
+export PATH=~/.fnm:$PATH
+eval "`fnm env`"
+
 export CONTAINER_ENVIRONMENT='self'
 
 export PGDATA=/usr/local/var/postgres
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.cfg/.aliases ] && source ~/.cfg/.aliases
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 [[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
 
