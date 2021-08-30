@@ -52,7 +52,7 @@ apt-get install ssh
 ```
 ln -s ~/.cfg/.xsessionrc .xsessionrc
 ln -s ~/.cfg/.Xresources .Xresources
-ln -s ~/.cfg/.alacritty.yml .alacritty.yml
+ln -s ~/.cfg/kitty.conf .config/kitty/kitty.conf
 ln -s ~/.cfg/.i3 .config/i3/config
 ln -s ~/.cfg/.i3status.conf .i3status.conf
 ln -s ~/.cfg/.tmux.conf .tmux.conf
@@ -83,6 +83,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ```
 * change default shell `chsh -s $(which zsh)`
 * install ranger `apt-get install ranger`
+* install pure (prompt) https://github.com/sindresorhus/pure
 
 ### vim
 
@@ -107,7 +108,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 ### node
 
-* install nvm
+* install fnm (yeah yeah bye nvm)
 * install lts version of node and make it default
 * install coc
 
