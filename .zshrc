@@ -35,7 +35,7 @@ export CONTAINER_ENVIRONMENT='self'
 
 export PGDATA=/usr/local/var/postgres
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.cfg/.fzf.zsh ] && source ~/.cfg/.fzf.zsh
 [ -f ~/.cfg/.aliases ] && source ~/.cfg/.aliases
 
 [[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
