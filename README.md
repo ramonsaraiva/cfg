@@ -83,6 +83,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ```
 * change default shell `chsh -s $(which zsh)`
 * install ranger `apt-get install ranger`
+* install fzf `apt-get install fzf`
 * install pure (prompt) https://github.com/sindresorhus/pure
 
 ### vim
