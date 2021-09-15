@@ -1,123 +1,10 @@
-filetype off
-
-call plug#begin('~/.local/share/nvim/plugged')
-
-" files
-Plug 'scrooloose/nerdtree', { 'do': 'NERDTreeToggle' }
-Plug 'mileszs/ack.vim'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'rbgrouleff/bclose.vim'
-Plug 'francoiscabrol/ranger.vim'
-
-" syntax
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'ervandew/supertab'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-Plug 'psf/black', { 'branch': 'stable', 'for': 'python' }
-
-" ui
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'lepture/vim-jinja'
-Plug 'majutsushi/tagbar'
-Plug 'luochen1990/rainbow'
-Plug 'lepture/vim-jinja'
-Plug 'ryanoasis/vim-devicons'
-
-" text
-Plug 'junegunn/goyo.vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'scrooloose/nerdcommenter'
-Plug 'godlygeek/tabular'
-Plug 'mattn/emmet-vim',          { 'for': ['html', 'jinja'] }
-Plug 'tpope/vim-surround'
-Plug 'vim-python/python-syntax', { 'for': 'python' }
-
-" colorschemes
-Plug 'joshdick/onedark.vim'
-
-" functional
-Plug 'kevinhui/vim-docker-tools'
-Plug 'vim-test/vim-test'
-Plug 'pwntester/octo.nvim'
-
-" clojure
-Plug 'tpope/vim-fireplace',                        { 'for': 'clojure' }
-Plug 'tpope/vim-salve',                            { 'for': 'clojure' }
-Plug 'guns/vim-clojure-static',                    { 'for': 'clojure' }
-Plug 'clojure-vim/async-clj-highlight',            { 'for': 'clojure' }
-Plug 'guns/vim-sexp',                              { 'for': 'clojure' }
-Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
-Plug 'clojure-vim/async-clj-omni',                 { 'for': 'clojure' }
-
-" javascript
-Plug 'yuezk/vim-js'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'maxmellon/vim-jsx-pretty'
-
-" elixir
-Plug 'elixir-editors/vim-elixir',    {'for': 'elixir'}
-Plug 'slashmili/alchemist.vim',      {'for': 'elixir'}
-
-" elm
-Plug 'ElmCast/elm-vim',              {'for': 'elm'}
-
-" vue
-Plug 'posva/vim-vue',                {'for': 'vue'}
-
-" terraform
-Plug 'hashivim/vim-terraform', {'for': 'terraform'}
-
-
-call plug#end()
-
-filetype plugin indent on
-
 if has('macunix')
     language en_US
 else
     language en_US.UTF-8
 endif
 
-"set lazyredraw
-set title
-set nobackup
-set nowritebackup
-set noswapfile 
-set noeol
-set hidden
-set autoread
-
-set ignorecase
-set smartcase
-set hlsearch
-set incsearch
-
-" line numbers
-set number
-set ruler
-
-set encoding=utf-8
-
 let python_highlight_all=1
-syntax on
-
-autocmd FileType python set autoindent
-autocmd FileType python set smartindent
-
-autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType css set tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType elm set tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType vue set tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType tf set tabstop=2 shiftwidth=2 softtabstop=2
-
-set backspace=indent,eol,start
 
 " colorscheme settings
 let g:onedark_termcolors = 256
@@ -130,24 +17,12 @@ function Highlights()
 endfunction
 autocmd FileType python call Highlights()
 
-set termguicolors
-set t_Co=256
-set colorcolumn=80,90,100
-set background=dark
-colorscheme onedark
 set laststatus=2
 if has('macunix') == 0
     " cursorline is really slow on macvim
     set cursorline
 endif
 
-set showbreak=↪\ 
-set listchars=tab:\|_,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
-set list
-
-set mouse=a
-
-set formatoptions-=t
 
 " black
 autocmd BufWritePost *.py silent! execute ':Black'
@@ -161,8 +36,6 @@ else
     let g:python_host_prog = '/Users/ramonsaraiva/.pyenv/2.7.18/python'
     let g:python3_host_prog = '/Users/ramonsaraiva/.pyenv/3.9.2/python'
 endif
-
-set completeopt=longest,menuone
 
 " coc
 let g:coc_disable_startup_warning = 0
