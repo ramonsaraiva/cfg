@@ -70,3 +70,4 @@ alias sshkey=sshkey
 alias restoresb="gpg -d $1 | zcat | docker exec -i silverback_postgres_1 psql -U silverback"
 alias pyb="git diff --name-status | cut -f2 | grep '.py' | xargs black"
 alias -g Z="| fzf"
+alias dns="echo 127.0.0.1 | sudo tee /etc/resolv.conf"
