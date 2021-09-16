@@ -38,7 +38,6 @@ return require('packer').startup(function()
     use 'lepture/vim-jinja'
     use 'majutsushi/tagbar'
     use 'luochen1990/rainbow'
-    use 'lepture/vim-jinja'
     use 'ryanoasis/vim-devicons'
 
     -- text

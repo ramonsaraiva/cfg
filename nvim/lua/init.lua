@@ -1,5 +1,3 @@
-vim.cmd('source .init.vim')
-
 local opt = vim.opt
 local cmd = vim.cmd
 
@@ -76,6 +74,6 @@ vim.api.nvim_command([[
     autocmd FileType tf set tabstop=2 shiftwidth=2 softtabstop=2
 ]])
 
-require('autocomplete')
 require('plugins')
-require('mappings')
+-- require('autocomplete')
+-- require('mappings')
