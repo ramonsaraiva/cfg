@@ -26,8 +26,8 @@ return require('packer').startup(function()
     }
     use {
         'psf/black',
-        branch = 'stable',
-        ft = 'py'
+        branch = 'main',
+        ft = 'python'
     }
 
     -- ui
@@ -55,7 +55,7 @@ return require('packer').startup(function()
     use 'tpope/vim-surround'
     use {
         'vim-python/python-syntax',
-        ft = 'py'
+        ft = 'python'
     }
 
     -- functional
@@ -69,14 +69,14 @@ return require('packer').startup(function()
     -- js
     use {
         'yuezk/vim-js',
-        ft = 'js'
+        ft = 'javascript'
     }
     use {
         'HerringtonDarkholme/yats.vim',
-        ft = 'js'
+        ft = 'javascript'
     }
     use {
         'maxmellon/vim-jsx-pretty',
-        ft = 'js'
+        ft = 'javascript'
     }
 end)
