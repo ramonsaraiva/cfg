@@ -1,5 +1,8 @@
 if [[ "$OSTYPE" == 'linux-gnu' ]]; then
     setxkbmap -option caps:escape
+else
+    export LANG=en_US.UTF-8
+    export LC_CTYPE=en_US.UTF-8
 fi
 
 plugins=(brew django docker git jira npm python redis-cli urltools vi-mode zsh-autosuggestions)
@@ -18,6 +21,11 @@ export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 eval "$(pyenv init -)"
+# macos needs this crap
+if [[ "$OSTYPE" != 'linux-gnu' ]]; then
+    eval "$(pyenv virtualenv-init -)"
+    eval "$(pyenv init --path)"
+fi
 
 export PATH=$PATH:/usr/local/bin
 
