@@ -33,8 +33,8 @@ if has('macunix') == 0
     let g:python_host_prog = '/home/ramon/.pyenv/versions/2.7.18/bin/python'
     let g:python3_host_prog = '/home/ramon/.pyenv/versions/3.9.2/bin/python'
 else
-    let g:python_host_prog = '/Users/ramonsaraiva/.pyenv/2.7.18/python'
-    let g:python3_host_prog = '/Users/ramonsaraiva/.pyenv/3.9.2/python'
+    let g:python_host_prog = '/Users/ramonsaraiva/.pyenv/versions/2.7.18/bin/python'
+    let g:python3_host_prog = '/Users/ramonsaraiva/.pyenv/versions/3.9.6/bin/python'
 endif
 
 " coc
