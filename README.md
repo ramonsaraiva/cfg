@@ -8,9 +8,8 @@
 apt-get update
 apt-get upgrade
 ```
-* install neovim (prob nightly `from https://github.com/neovim/neovim/releases` - appimage?)
-* install urxvt terminal `apt-get install rxvt-unicode`
-* install alacritty terminal (with cargo for deb)
+* install [neovim](https://github.com/neovim/neovim/releases) (prob nightly -> appimage?)
+* install [kitty terminal](https://sw.kovidgoyal.net/kitty/binary/)
 * install X and i3wm
 ```
 apt-get install xorg i3
@@ -88,14 +87,13 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 ### vim
 
-* create .vim `git clone git@github.com:ramonsaraiva/dotvim .vim`
-* create symlink `ln -s ~/.vim/.nvimrc .config/nvim/init.vim`
-* download vim-plug
+* create symlink `ln -s ~/.cfg/nvim ~/.config/nvim`
+* clone packer
 ```
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
-* open vim and run `:PlugInstall`
+* run `vim --headless +PackerInstall +qall`
 * install ripgrep `apt-get install ripgrep`
 * install gh `https://github.com/cli/cli/blob/trunk/docs/install_linux.md`
 
@@ -105,6 +103,8 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 * install pyenv virtualenv `https://github.com/pyenv/pyenv-virtualenv`
 * install 2.7.x version for vim `g:python_host_prog` (yeah but should use shims)
 * install 3.x version for vim `g:python3_host_prog` (yeah but should use shims)
+* install neovim
+* install pylint
 * install black
 
 ### node
