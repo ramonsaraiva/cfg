@@ -71,19 +71,6 @@ opt.background = 'dark'
 opt.laststatus = 2
 cmd('colorscheme onedark')
 
--- autocmds (not yet fully supported by lua i guess?)
-vim.api.nvim_command([[
-    autocmd FileType python set autoindent
-    autocmd FileType python set smartindent
-    autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd FileType css set tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd FileType elm set tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd FileType vue set tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd FileType tf set tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd BufWritePost *.py silent! execute ':Black'
-]])
-
 -- plugins settings and other
 g.onedark_termcolors = 256
 g.onedark_terminal_italics = 1
@@ -102,3 +89,31 @@ g.coc_global_extensions = [['coc-pyright', 'coc-tslint-plugin', 'coc-tsserver', 
 require('plugins')
 -- require('autocomplete')
 require('mappings')
+
+--  not yet fully supported by lua i guess?
+vim.api.nvim_command([[
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gy <Plug>(coc-type-definition)
+    nmap <silent> gi <Plug>(coc-implementation)
+    nmap <silent> gr <Plug>(coc-references)
+
+    function Highlights()
+        hi semshiSelf cterm=italic gui=italic
+        hi semshiBuiltin cterm=italic gui=italic
+        hi Comment cterm=italic gui=italic
+    endfunction
+    autocmd FileType python call Highlights()
+
+    autocmd BufWritePost *.py silent! execute ':Black'
+
+    autocmd FileType python set autoindent
+    autocmd FileType python set smartindent
+    autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd FileType css set tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd FileType elm set tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd FileType vue set tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd FileType tf set tabstop=2 shiftwidth=2 softtabstop=2
+]])
+
+

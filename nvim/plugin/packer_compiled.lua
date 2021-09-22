@@ -227,17 +227,17 @@ time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[au CmdUndefined :UpdateRemotePlugins ++once lua require"packer.load"({'semshi'}, {}, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NERDTreeToggle lua require("packer.load")({'nerdtree'}, { cmd = "NERDTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
 pcall(vim.cmd, [[au CmdUndefined cd app && yarn install ++once lua require"packer.load"({'markdown-preview.nvim'}, {}, _G.packer_plugins)]])
+pcall(vim.cmd, [[au CmdUndefined :UpdateRemotePlugins ++once lua require"packer.load"({'semshi'}, {}, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType py ++once lua require("packer.load")({'black', 'python-syntax'}, { ft = "py" }, _G.packer_plugins)]]
-vim.cmd [[au FileType js ++once lua require("packer.load")({'vim-js', 'yats.vim', 'vim-jsx-pretty'}, { ft = "js" }, _G.packer_plugins)]]
+vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-js', 'vim-jsx-pretty', 'yats.vim'}, { ft = "javascript" }, _G.packer_plugins)]]
+vim.cmd [[au FileType python ++once lua require("packer.load")({'black', 'python-syntax'}, { ft = "python" }, _G.packer_plugins)]]
 vim.cmd [[au FileType html,jinja ++once lua require("packer.load")({'emmet-vim'}, { ft = "html,jinja" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")

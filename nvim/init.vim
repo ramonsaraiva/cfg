@@ -1,14 +1,5 @@
 lua require('init')
 
-" TODO: move all to lua!
-
-function Highlights()
-    hi semshiSelf cterm=italic gui=italic
-    hi semshiBuiltin cterm=italic gui=italic
-    hi Comment cterm=italic gui=italic
-endfunction
-autocmd FileType python call Highlights()
-
 " semshi
  let g:semshi#mark_selected_nodes = 0
 
@@ -52,10 +43,3 @@ let g:dockertools_default_all = 0
 let g:ranger_map_keys = 0
 let g:NERDTreeHijackNetrw = 0
 let g:ranger_replace_netrw = 1
-
-" dunno how to use <plug> in lua
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
