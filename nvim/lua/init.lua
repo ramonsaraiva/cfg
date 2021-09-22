@@ -10,12 +10,18 @@ end
 opt.encoding = 'utf-8'
 opt.formatoptions = 'jcroql'
 opt.mouse = 'a'
-opt.clipboard = [[unnamed,unnamedplus]]
+opt.clipboard = {
+    unnamed,
+    unnamedplus
+}
 g.mapleader = ','
 
 -- syntax
 opt.syntax = 'on'
-opt.completeopt = [[longest,menuone]]
+opt.completeopt = {
+    longes,
+    menuone
+}
 
 -- performance
 opt.hidden = true
@@ -75,16 +81,25 @@ cmd('colorscheme onedark')
 g.onedark_termcolors = 256
 g.onedark_terminal_italics = 1
 
+local pyenv_root = os.getenv('PYENV_ROOT')
 if macos() then
-    g.python_host_prog = '/Users/ramonsaraiva/.pyenv/versions/2.7.18/bin/python'
-    g.python3_host_prog = '/Users/ramonsaraiva/.pyenv/versions/3.9.6/bin/python'
+    g.python_host_prog = pyenv_root .. '/versions/2.7.18/bin/python'
+    g.python3_host_prog = pyenv_root .. '/versions/3.9.6/bin/python'
 else
-    g.python_host_prog = '/home/ramon/.pyenv/versions/2.7.18/bin/python'
-    g.python3_host_prog = '/home/ramon/.pyenv/versions/3.9.2/bin/python'
+    g.python_host_prog = pyenv_root .. '/versions/2.7.18/bin/python'
+    g.python3_host_prog = pyenv_root .. '/versions/3.9.6/bin/python'
 end
 
 g.coc_disable_startup_warning = 0
-g.coc_global_extensions = [['coc-pyright', 'coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier']]
+g.coc_global_extensions = {
+    'coc-pyright',
+    'coc-tslint-plugin',
+    'coc-tsserver',
+    'coc-css',
+    'coc-html',
+    'coc-json',
+    'coc-prettier'
+}
 
 require('plugins')
 -- require('autocomplete')
@@ -115,5 +130,3 @@ vim.api.nvim_command([[
     autocmd FileType vue set tabstop=2 shiftwidth=2 softtabstop=2
     autocmd FileType tf set tabstop=2 shiftwidth=2 softtabstop=2
 ]])
-
-
