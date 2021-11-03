@@ -87,7 +87,7 @@ if macos() then
     g.python3_host_prog = pyenv_root .. '/versions/3.9.6/bin/python'
 else
     g.python_host_prog = pyenv_root .. '/versions/2.7.18/bin/python'
-    g.python3_host_prog = pyenv_root .. '/versions/3.9.6/bin/python'
+    g.python3_host_prog = pyenv_root .. '/versions/3.9.7/bin/python'
 end
 
 g.coc_disable_startup_warning = 0
@@ -106,6 +106,7 @@ require('plugins')
 require('mappings')
 
 --  not yet fully supported by lua i guess?
+--  autocmd BufWritePost *.py silent! execute ':Black'
 vim.api.nvim_command([[
     nmap <silent> gd <Plug>(coc-definition)
     nmap <silent> gy <Plug>(coc-type-definition)
@@ -118,8 +119,6 @@ vim.api.nvim_command([[
         hi Comment cterm=italic gui=italic
     endfunction
     autocmd FileType python call Highlights()
-
-    autocmd BufWritePost *.py silent! execute ':Black'
 
     autocmd FileType python set autoindent
     autocmd FileType python set smartindent
