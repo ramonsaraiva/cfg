@@ -29,6 +29,15 @@ return require('packer').startup(function()
         branch = 'main',
         ft = 'python'
     }
+    use {
+        'prettier/vim-prettier',
+        ft = 'javascript,typescript,css,less,scss,json,graphql,markdown,vue,svelte,yaml,html'
+    }
+    use {
+        'posva/vim-vue',
+        ft = 'vue',
+        cmd = 'yarn install --frozen-lockfile --production'
+    }
 
     -- ui
     use 'vim-airline/vim-airline'

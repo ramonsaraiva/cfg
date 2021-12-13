@@ -82,10 +82,10 @@ bindsym $mod+p exec --no-startup-id urxvt -name scratchpad -e python3
 bindsym $mod+r exec --no-startup-id urxvt -name scratchpad -e ranger
 bindsym --release Print exec --no-startup-id "flameshot gui"
 
-bindsym $mod+Shift+p exec --no-startup-id xrandr --output DP-0 --primary --mode 1920x1080 --primary --rotate normal --output HDMI-0 --mode 1280x720 --left-of HDMI-0 --noprimary
-bindsym $mod+Shift+o exec --no-startup-id xrandr --output DP-0 --primary --mode 1920x1080 --primary --rotate normal --output HDMI-0 --off
-bindsym $mod+Shift+f exec --no-startup-id xrandr --output DP-0 --primary --mode 3840x1080 --primary --rotate normal --output HDMI-0 --mode 1280x720 --left-of HDMI-0 --noprimary
-bindsym $mod+Shift+d exec --no-startup-id xrandr --output DP-0 --primary --mode 3840x1080 --primary --rotate normal --output HDMI-0 --off
+bindsym $mod+Shift+p exec --no-startup-id xrandr --output DP-0 --primary --mode 1920x1080 --primary --rotate normal --output HDMI-1 --mode 1280x720 --left-of HDMI-1 --noprimary
+bindsym $mod+Shift+o exec --no-startup-id xrandr --output DP-0 --primary --mode 1920x1080 --primary --rotate normal --output HDMI-1 --off
+bindsym $mod+Shift+f exec --no-startup-id xrandr --output DP-0 --primary --mode 3840x1080 --primary --rotate normal --output HDMI-1 --mode 1280x720 --left-of HDMI-1 --noprimary
+bindsym $mod+Shift+d exec --no-startup-id xrandr --output DP-0 --primary --mode 3840x1080 --primary --rotate normal --output HDMI-1 --off
 
 bindsym $mod+Ctrl+i exec --no-startup-id setxkbmap -layout us -variant altgr-intl -option nodeadkeys
 bindsym $mod+Ctrl+p exec --no-startup-id setxkbmap -model abnt2 -layout br -variant abnt2

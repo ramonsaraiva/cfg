@@ -106,26 +106,31 @@ require('plugins')
 require('mappings')
 
 --  not yet fully supported by lua i guess?
---  autocmd BufWritePost *.py silent! execute ':Black'
-vim.api.nvim_command([[
-    nmap <silent> gd <Plug>(coc-definition)
-    nmap <silent> gy <Plug>(coc-type-definition)
-    nmap <silent> gi <Plug>(coc-implementation)
-    nmap <silent> gr <Plug>(coc-references)
+vim.api.nvim_command('nmap <silent> gd <Plug>(coc-definition)')
+vim.api.nvim_command('nmap <silent> gy <Plug>(coc-type-definition)')
+vim.api.nvim_command('nmap <silent> gi <Plug>(coc-implementation)')
+vim.api.nvim_command('nmap <silent> gr <Plug>(coc-references)')
 
-    function Highlights()
+-- vim.api.nvim_command("autocmd BufWritePost *.js silent! execute ':CocCommand prettier.formatFile'")
+-- vim.api.nvim_command("autocmd BufWritePost *.vue silent! execute ':CocCommand prettier.formatFile'")
+vim.api.nvim_command("autocmd BufWritePost *.js silent! execute ':Prettier'")
+vim.api.nvim_command("autocmd BufWritePost *.vue silent! execute ':Prettier'")
+vim.api.nvim_command("autocmd BufWritePost *.py silent! execute ':Black'")
+vim.api.nvim_command("autocmd FileType python set autoindent")
+vim.api.nvim_command("autocmd FileType python set smartindent")
+
+vim.api.nvim_command('autocmd FileType vue set tabstop=2 shiftwidth=2 softtabstop=2')
+vim.api.nvim_command('autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2')
+vim.api.nvim_command('autocmd FileType css set tabstop=2 shiftwidth=2 softtabstop=2')
+vim.api.nvim_command('autocmd FileType elm set tabstop=2 shiftwidth=2 softtabstop=2')
+vim.api.nvim_command('autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2')
+vim.api.nvim_command('autocmd FileType tf set tabstop=2 shiftwidth=2 softtabstop=2')
+
+vim.api.nvim_command([[
+    function HHighlights()
         hi semshiSelf cterm=italic gui=italic
         hi semshiBuiltin cterm=italic gui=italic
         hi Comment cterm=italic gui=italic
     endfunction
-    autocmd FileType python call Highlights()
-
-    autocmd FileType python set autoindent
-    autocmd FileType python set smartindent
-    autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd FileType css set tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd FileType elm set tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd FileType vue set tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd FileType tf set tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd FileType python call HHighlights()
 ]])
