@@ -38,6 +38,11 @@ return require('packer').startup(function()
         ft = 'vue',
         cmd = 'yarn install --frozen-lockfile --production'
     }
+    use {
+        'stsewd/sphinx.nvim',
+        ft = 'rst',
+        cmd = ':UpdateRemotePlugins'
+    }
 
     -- ui
     use 'vim-airline/vim-airline'

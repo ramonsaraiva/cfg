@@ -119,12 +119,14 @@ vim.api.nvim_command("autocmd BufWritePost *.py silent! execute ':Black'")
 vim.api.nvim_command("autocmd FileType python set autoindent")
 vim.api.nvim_command("autocmd FileType python set smartindent")
 
+vim.api.nvim_command('autocmd FileType html set tabstop=2 shiftwidth=2 softtabstop=2')
 vim.api.nvim_command('autocmd FileType vue set tabstop=2 shiftwidth=2 softtabstop=2')
 vim.api.nvim_command('autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2')
 vim.api.nvim_command('autocmd FileType css set tabstop=2 shiftwidth=2 softtabstop=2')
 vim.api.nvim_command('autocmd FileType elm set tabstop=2 shiftwidth=2 softtabstop=2')
 vim.api.nvim_command('autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2')
 vim.api.nvim_command('autocmd FileType tf set tabstop=2 shiftwidth=2 softtabstop=2')
+vim.api.nvim_command('autocmd FileType rst set tabstop=3 shiftwidth=3 softtabstop=3')
 
 vim.api.nvim_command([[
     function HHighlights()

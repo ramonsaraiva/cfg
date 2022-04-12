@@ -174,6 +174,14 @@ _G.packer_plugins = {
     path = "/home/ramon/.local/share/nvim/site/pack/packer/opt/semshi",
     url = "https://github.com/numirias/semshi"
   },
+  ["sphinx.nvim"] = {
+    commands = { ":UpdateRemotePlugins" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/ramon/.local/share/nvim/site/pack/packer/opt/sphinx.nvim",
+    url = "https://github.com/stsewd/sphinx.nvim"
+  },
   supertab = {
     loaded = true,
     path = "/home/ramon/.local/share/nvim/site/pack/packer/start/supertab",
@@ -286,8 +294,8 @@ time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[au CmdUndefined :UpdateRemotePlugins ++once lua require"packer.load"({'semshi'}, {}, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NERDTreeToggle lua require("packer.load")({'nerdtree'}, { cmd = "NERDTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[au CmdUndefined :UpdateRemotePlugins ++once lua require"packer.load"({'semshi', 'sphinx.nvim'}, {}, _G.packer_plugins)]])
 pcall(vim.cmd, [[au CmdUndefined yarn install --frozen-lockfile --production ++once lua require"packer.load"({'vim-vue'}, {}, _G.packer_plugins)]])
 pcall(vim.cmd, [[au CmdUndefined cd app && yarn install ++once lua require"packer.load"({'markdown-preview.nvim'}, {}, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
@@ -296,14 +304,24 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType rst ++once lua require("packer.load")({'sphinx.nvim'}, { ft = "rst" }, _G.packer_plugins)]]
 vim.cmd [[au FileType python ++once lua require("packer.load")({'python-syntax', 'black'}, { ft = "python" }, _G.packer_plugins)]]
-vim.cmd [[au FileType vue ++once lua require("packer.load")({'vim-vue'}, { ft = "vue" }, _G.packer_plugins)]]
 vim.cmd [[au FileType javascript,typescript,css,less,scss,json,graphql,markdown,vue,svelte,yaml,html ++once lua require("packer.load")({'vim-prettier'}, { ft = "javascript,typescript,css,less,scss,json,graphql,markdown,vue,svelte,yaml,html" }, _G.packer_plugins)]]
-vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-js', 'yats.vim', 'vim-jsx-pretty'}, { ft = "javascript" }, _G.packer_plugins)]]
+vim.cmd [[au FileType vue ++once lua require("packer.load")({'vim-vue'}, { ft = "vue" }, _G.packer_plugins)]]
 vim.cmd [[au FileType html,jinja ++once lua require("packer.load")({'emmet-vim'}, { ft = "html,jinja" }, _G.packer_plugins)]]
+vim.cmd [[au FileType javascript ++once lua require("packer.load")({'yats.vim', 'vim-js', 'vim-jsx-pretty'}, { ft = "javascript" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
+time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-vue/ftdetect/vue.vim]], true)
+vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-vue/ftdetect/vue.vim]]
+time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-vue/ftdetect/vue.vim]], false)
+time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescript.vim]], true)
+vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescript.vim]]
+time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescript.vim]], false)
+time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescriptreact.vim]], true)
+vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescriptreact.vim]]
+time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescriptreact.vim]], false)
 time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-js/ftdetect/javascript.vim]], true)
 vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-js/ftdetect/javascript.vim]]
 time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-js/ftdetect/javascript.vim]], false)
@@ -355,15 +373,6 @@ time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/pack
 time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/yaml.vim]], true)
 vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/yaml.vim]]
 time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/yaml.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-vue/ftdetect/vue.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-vue/ftdetect/vue.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-vue/ftdetect/vue.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescript.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescript.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescript.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescriptreact.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescriptreact.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescriptreact.vim]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
