@@ -45,8 +45,10 @@ return require('packer').startup(function()
     }
 
     -- ui
-    use 'vim-airline/vim-airline'
-    use 'vim-airline/vim-airline-themes'
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
     use 'tpope/vim-fugitive'
     use 'airblade/vim-gitgutter'
     use 'lepture/vim-jinja'
@@ -79,6 +81,8 @@ return require('packer').startup(function()
 
     -- colorschemes
     use 'joshdick/onedark.vim'
+    use 'shaunsingh/moonlight.nvim'
+    use 'folke/tokyonight.nvim'
 
     -- js
     use {
