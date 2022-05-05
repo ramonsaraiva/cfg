@@ -75,7 +75,7 @@ opt.termguicolors = true
 opt.colorcolumn = '80,90,100'
 opt.background = 'dark'
 opt.laststatus = 2
-cmd('colorscheme onedark')
+cmd('colorscheme moonlight')
 
 -- plugins settings and other
 g.onedark_termcolors = 256
