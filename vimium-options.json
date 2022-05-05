@@ -238,27 +238,43 @@
       "passKeys": ""
     },
     {
-      "pattern": "https?://github.dev/*",
+      "pattern": "https?://promptriddle.com/*",
       "passKeys": "*"
     },
     {
-      "pattern": "https?://github.dev/*",
+      "pattern": "https?://promptriddle.com/*",
       "passKeys": ""
     },
     {
-      "pattern": "https?://js13kgames.com/*",
+      "pattern": "https?://alpha6.madworldmmo.com/*",
       "passKeys": "*"
     },
     {
-      "pattern": "https?://js13kgames.com/*",
+      "pattern": "https?://alpha6.madworldmmo.com/*",
       "passKeys": ""
     },
     {
-      "pattern": "https?://app.excalidraw.com/*",
+      "pattern": "https?://play.retro-mmo.com/*",
       "passKeys": "*"
     },
     {
-      "pattern": "https?://app.excalidraw.com/*",
+      "pattern": "https?://coinmarketcap.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://vim-adventures.com/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://vim-adventures.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.typingtest.com/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://www.typingtest.com/*",
       "passKeys": ""
     }
   ],
@@ -275,8 +291,8 @@
   "ignoreKeyboardLayout": false,
   "scrollStepSize": 80,
   "smoothScroll": true,
-  "grabBackFocus": true,
-  "searchEngines": "w: http://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\ny: http://www.youtube.com/results?search_query=%s Youtube\ngm: https://www.google.com/maps?q=%s Google maps\nnf: https://www.netflix.com/search?q=%s Netflix\n\nlol: https://www.probuilds.net/champions/details/%s Pro Builds\n\njira: https://consumeraffairs.atlassian.net/browse/%s JIRA\nconfluence: https://consumeraffairs.atlassian.net/wiki/search?text=%s Confluence\n\n# leadsapi\nrawlead: https://leads.consumeraffairs.com/admin/v2/lead/rawlead/%s/ LeadsAPI rawlead\nreferral: https://leads.consumeraffairs.com/admin/v2/lead/referral/%s/ LeadsAPI referral\n\n# mainsite\nbrand: https://www.consumeraffairs.com/admin/brands/campaign/?q=%s Mainsite brand\nbrand_id: https://www.consumeraffairs.com/admin/brands/campaign/%s/ Mainsite brand id\ncampaign: https://www.consumeraffairs.com/admin/companies/campaign/?q=%s Mainsite campaign\ncampaign-qa: https://qa.consumeraffairs.com/admin/companies/campaign/?q=%s Mainsite QA campaign\ncampaign-staging: https://staging.consumeraffairs.com/admin/companies/campaign/?q=%s Mainsite Staging campaign\ncampaign-local: campaign-qa: http://localhost:28080/admin/companies/campaign/?q=%s Mainsite Local campaign\n\n# silverback\nendpoint: https://my.consumeraffairs.com/admin/landpages/endpoint/?q=%s Silverback endpoint\nendpoint-qa: https://qa-my.consumeraffairs.com/admin/landpages/endpoint/?q=%s Silverback QA endpoint\nendpoint-staging: https://staging-my.consumeraffairs.com/admin/landpages/endpoint/?q=%s Silverback Staging endpoint\nendpoint-local: http://localhost:48000/admin/landpages/endpoint/?q=%s Silverback Local endpoint\nconfig: https://my.consumeraffairs.com/admin/landpages/config/%s/change/ Silverback config\nconfig-qa: https://qa-my.consumeraffairs.com/admin/landpages/config/%s/change/ Silverback QA config\nconfig-staging: https://staging-my.consumeraffairs.com/admin/landpages/config/%s/change/ Silverback Staging config\nconfig-local: http://localhost:48000/admin/landpages/config/%s/change/ Silverback Local config\n\n# userdb\nconsumer_email: http://userdb.conaff/admin/consumers/consumer/?email=%s UserDB consumer email\nconsumer_phone: http://userdb.conaff/admin/consumers/consumer/?phone=%s UserDB consumer phone\nucid: http://userdb.conaff/admin/consumers/consumer/%s/ UserDB consumer UCID\nsession: http://userdb.conaff/admin/events/session/?encoded_key=%s UserDB session\nsession_id: http://userdb.conaff/admin/events/session/%s/ UserDB session id\nevent: http://userdb.conaff/admin/events/event/%s/ UserDB event\n\n# github org\ngorg: https://github.com/orgs/ConsumerAffairs/people?query=%s GitHub ConsumerAffairs Org\n\n# github -> consumeraffairs\ngcar: https://github.com/consumeraffairs/%s GitHub ConsumerAffairs repos\n\n# github -> consumeraffairs -> consumeraffairs\ngca: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%E2%9C%93&q=is%3Apr+%s ConsumerAffairs PR Search\ngcau: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A%s ConsumerAffairs PR Author Search\ngcaf: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%s ConsumerAffairs PR Free Search\ngcapr: https://github.com/ConsumerAffairs/consumeraffairs/pull/%s ConsumerAffairs PR ID\n\n# github -> consumeraffairs -> silverback\ngsb: https://github.com/consumeraffairs/silverback/pulls?utf8=%E2%9C%93&q=is%3Apr+%s Silverback PR Search\ngsbu: https://github.com/consumeraffairs/silverback/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A%s Silverback PR Author Search\ngsbpr: https://github.com/ConsumerAffairs/silverback/pull/%s Silverback PR ID\n\n# github -> consumeraffairs -> userdb\ngudb: https://github.com/consumeraffairs/userdb/pulls?utf8=%E2%9C%93&q=is%3Apr+%s UserDB PR Search\ngudbu: https://github.com/consumeraffairs/userdb/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A%s UserDB PR Author Search\ngudbpr: https://github.com/ConsumerAffairs/userdb/pull/%s UserDB PR ID\n\n# b64\nb64: https://www.base64%s.org/ Base64 encode/decode\n\ntv: https://br.tradingview.com/symbols/BMFBOVESPA-%s/\nc: https://eduardocavalcanti.com/?post_type%5B%5D=an_fundamentalista&s=%s",
+  "grabBackFocus": false,
+  "searchEngines": "w: http://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\ny: http://www.youtube.com/results?search_query=%s Youtube\ngm: https://www.google.com/maps?q=%s Google maps\nnf: https://www.netflix.com/search?q=%s Netflix\n\nlol: https://www.probuilds.net/champions/details/%s Pro Builds\n\njira: https://consumeraffairs.atlassian.net/browse/%s\nconfluence: https://consumeraffairs.atlassian.net/wiki/search?text=%s\n\n# mainsite campaigns\ncampaign: https://www.consumeraffairs.com/admin/companies/campaign/?q=%s\ncampaign-qa: https://qa.consumeraffairs.com/admin/companies/campaign/?q=%s\ncampaign-staging: https://staging.consumeraffairs.com/admin/companies/campaign/?q=%s\ncampaign-local: campaign-qa: http://localhost:28080/admin/companies/campaign/?q=%s\n\n# silverback endpoints\nendpoint: https://my.consumeraffairs.com/admin/landpages/endpoint/?q=%s Silverback endpoint\nendpoint-qa: https://qa-my.consumeraffairs.com/admin/landpages/endpoint/?q=%s Silverback QA endpoint\nendpoint-staging: https://staging-my.consumeraffairs.com/admin/landpages/endpoint/?q=%s Silverback Staging endpoint\nendpoint-local: http://localhost:48000/admin/landpages/endpoint/?q=%s Silverback Local endpoint\n\n# silverback configs\nconfig: https://my.consumeraffairs.com/admin/landpages/config/%s/change/ Silverback config\nconfig-qa: https://qa-my.consumeraffairs.com/admin/landpages/config/%s/change/ Silverback QA config\nconfig-staging: https://staging-my.consumeraffairs.com/admin/landpages/config/%s/change/ Silverback Staging config\nconfig-local: http://localhost:48000/admin/landpages/config/%s/change/ Silverback Local config\n\n# github org\ngorg: https://github.com/orgs/ConsumerAffairs/people?query=%s GitHub ConsumerAffairs Org\n\n# github -> consumeraffairs\ngcar: https://github.com/consumeraffairs/%s GitHub ConsumerAffairs repos\n\n# github -> consumeraffairs -> consumeraffairs\ngca: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%E2%9C%93&q=is%3Apr+%s ConsumerAffairs PR Search\ngcau: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A%s ConsumerAffairs PR Author Search\ngcaf: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%s ConsumerAffairs PR Free Search\ngcapr: https://github.com/ConsumerAffairs/consumeraffairs/pull/%s ConsumerAffairs PR ID\n\n# github -> consumeraffairs -> silverback\ngsb: https://github.com/consumeraffairs/silverback/pulls?utf8=%E2%9C%93&q=is%3Apr+%s Silverback PR Search\ngsbu: https://github.com/consumeraffairs/silverback/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A%s Silverback PR Author Search\ngsbpr: https://github.com/ConsumerAffairs/silverback/pull/%s Silverback PR ID\n\n# github -> consumeraffairs -> userdb\ngudb: https://github.com/consumeraffairs/userdb/pulls?utf8=%E2%9C%93&q=is%3Apr+%s UserDB PR Search\ngudbu: https://github.com/consumeraffairs/userdb/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A%s UserDB PR Author Search\ngudbpr: https://github.com/ConsumerAffairs/userdb/pull/%s UserDB PR ID\n\n# b64\nb64: https://www.base64%s.org/ Base64 encode/decode\n\ntv: https://br.tradingview.com/symbols/BMFBOVESPA-%s/\nc: https://eduardocavalcanti.com/?post_type%5B%5D=an_fundamentalista&s=%s",
   "searchUrl": "https://www.google.com/search?q=",
   "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
 }
