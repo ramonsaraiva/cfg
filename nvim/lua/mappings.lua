@@ -42,7 +42,10 @@ set_keymap('n', '<c-t>v', '<cmd>TestVisit<cr>')
 
 -- config files shortcuts
 set_keymap('n', '<leader>rc', '<cmd>vsplit ~/.cfg/nvim/lua/init.lua<cr>')
+set_keymap('n', '<leader>rp', '<cmd>vsplit ~/.cfg/nvim/lua/plugins.lua<cr>')
+set_keymap('n', '<leader>rm', '<cmd>vsplit ~/.cfg/nvim/lua/mappings.lua<cr>')
 set_keymap('n', '<leader>kc', '<cmd>vsplit ~/.cfg/kitty.conf<cr>')
+set_keymap('n', '<leader>kt', '<cmd>vsplit ~/.config/kitty/kitty-themes/themes/moonlight.conf<cr>')
 -- noremap <leader>pr :!cp -rf ~/.cfg/.pr_template.md /tmp/.pr_template.md<cr><cr>:vsplit /tmp/.pr_template.md<cr>:Goyo<cr>
 -- noremap <leader>jt :!cp -rf ~/.cfg/.jira_template.md /tmp/.jira_template.md<cr><cr>:vsplit /tmp/.jira_template.md<cr>:Goyo<cr>
 
