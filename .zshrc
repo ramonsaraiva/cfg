@@ -49,5 +49,6 @@ export PATH=$PATH:"$HOME/.cargo/bin"
 source $HOME/.cargo/env
 
 export PATH=$PATH:/snap/bin
+export PATH=$PATH:"$HOME/.local/bin"
 
 set -o vi
