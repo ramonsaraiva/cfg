@@ -79,7 +79,7 @@ exec --no-startup-id feh --bg-scale '/home/ramon/.cfg/wp.jpg'
 
 for_window [class="scratch-terminal"] move window to scratchpad, scratchpad show, move position 50px 0px, resize set 1200 400, border pixel 3
 bindsym $mod+p exec kitty --class=scratch-terminal -e python3
-bindsym --release Print exec --no-startup-id "flameshot gui"
+bindsym --release Delete exec --no-startup-id "flameshot gui"
 
 bindsym $mod+Shift+p exec --no-startup-id xrandr --output DP-0 --primary --mode 1920x1080 --primary --rotate normal --output HDMI-1 --mode 1280x720 --left-of HDMI-1 --noprimary
 bindsym $mod+Shift+o exec --no-startup-id xrandr --output DP-0 --primary --mode 1920x1080 --primary --rotate normal --output HDMI-1 --off
