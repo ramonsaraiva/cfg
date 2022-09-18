@@ -29,6 +29,10 @@ function ca() {
     )
 }
 
+function twingate_auth() {
+    xdg-open "$(twingate status | grep -Eo "https://[^ >]+" | head -n1)"
+}
+
 alias vim="nvim"
 
 alias ca=ca
@@ -44,6 +48,7 @@ alias rs="python manage.py runserver"
 alias rsp="python manage.py runserver_plus"
 alias nrs="newrelic-admin run-python manage.py runserver_plus"
 alias cpyc="find . -name '*.pyc' -delete"
+alias twingate_auth=twingate_auth
 
 alias d=docker
 alias dp="d ps"
