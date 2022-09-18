@@ -276,6 +276,14 @@
     {
       "pattern": "https?://www.typingtest.com/*",
       "passKeys": ""
+    },
+    {
+      "pattern": "https?://ceac.state.gov/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://ceac.state.gov/*",
+      "passKeys": ""
     }
   ],
   "filterLinkHints": false,
