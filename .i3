@@ -3,7 +3,7 @@ font pango:Operator Mono 12
 
 floating_modifier $mod
 
-bindsym $mod+Return exec --no-startup-id ./kitty/bin/kitty
+bindsym $mod+Return exec --no-startup-id kitty
 
 bindsym $mod+Shift+q kill
 
@@ -76,6 +76,7 @@ for_window [class="^.*"] border pixel 0
 
 exec --no-startup-id compton --config ~/.cfg/compton.conf
 exec --no-startup-id feh --bg-scale '/home/ramon/.cfg/wp.jpg'
+exec --no-startup-id dunst
 
 for_window [class="scratch-terminal"] move window to scratchpad, scratchpad show, move position 50px 0px, resize set 1200 400, border pixel 3
 bindsym $mod+p exec kitty --class=scratch-terminal -e python3

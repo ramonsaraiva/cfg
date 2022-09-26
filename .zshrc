@@ -1,3 +1,7 @@
+if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
+    startx
+fi
+
 if [[ "$OSTYPE" == 'linux-gnu' ]]; then
     setxkbmap -option caps:escape
 else
