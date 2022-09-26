@@ -74,7 +74,11 @@ opt.list = true
 opt.termguicolors = true
 opt.colorcolumn = '80,90,100'
 opt.background = 'dark'
-opt.laststatus = 2
+if vim.api.nvim_eval('g:started_by_firenvim') then
+    opt.laststatus = 0
+else
+    opt.laststatus = 2
+end
 cmd('colorscheme moonlight')
 
 -- plugins settings and other
@@ -116,7 +120,7 @@ vim.api.nvim_command('nmap <silent> gr <Plug>(coc-references)')
 vim.api.nvim_command("autocmd BufWritePost *.js silent! execute ':Prettier'")
 vim.api.nvim_command("autocmd BufWritePost *.ts silent! execute ':Prettier'")
 vim.api.nvim_command("autocmd BufWritePost *.vue silent! execute ':Prettier'")
-vim.api.nvim_command("autocmd BufWritePost *.py silent! execute ':Black'")
+-- vim.api.nvim_command("autocmd BufWritePost *.py silent! execute ':Black'")
 vim.api.nvim_command("autocmd FileType python set autoindent")
 vim.api.nvim_command("autocmd FileType python set smartindent")
 
@@ -128,6 +132,9 @@ vim.api.nvim_command('autocmd FileType elm set tabstop=2 shiftwidth=2 softtabsto
 vim.api.nvim_command('autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2')
 vim.api.nvim_command('autocmd FileType tf set tabstop=2 shiftwidth=2 softtabstop=2')
 vim.api.nvim_command('autocmd FileType rst set tabstop=3 shiftwidth=3 softtabstop=3')
+
+-- firenvim specific
+vim.api.nvim_command('autocmd BufEnter github.com_*.txt set filetype=markdown')
 
 vim.api.nvim_command([[
     function HHighlights()
