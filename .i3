@@ -66,9 +66,22 @@ bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed 
 bar {
     position top
     i3bar_command i3bar
-    status_command i3status
+    status_command /usr/bin/bumblebee-status \
+        -m shell weather traffic disk cpu memory date time \
+        -p shell.command="todoist-cli l -f @active" \
+        -p shell.interval=10 \
+        -p weather.showcity=0 \
+        -p traffic.showname=0 \
+        -p traffic.format="{:.0f}" \
+        -p disk.format="+{left}" \
+        -p memory.format="{used}" \
+        -p date.format="%d/%m" \
+        -p time.format="%H:%M" \
+        -t nord-powerline
     colors {
-        background #282c34
+        background #212337
+        inactive_workspace #212337 #212337 #e4f3fa
+        focused_workspace #212337 #403c64 #e4f3fa
     }
 }
 

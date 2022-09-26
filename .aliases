@@ -34,6 +34,7 @@ function twingate_auth() {
 }
 
 alias vim="nvim"
+alias t="todoist-cli"
 
 alias ca=ca
 alias brands=brands
