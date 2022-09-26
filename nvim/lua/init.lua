@@ -74,11 +74,7 @@ opt.list = true
 opt.termguicolors = true
 opt.colorcolumn = '80,90,100'
 opt.background = 'dark'
-if vim.api.nvim_eval('g:started_by_firenvim') then
-    opt.laststatus = 0
-else
-    opt.laststatus = 2
-end
+opt.laststatus = 2
 cmd('colorscheme moonlight')
 
 -- plugins settings and other
