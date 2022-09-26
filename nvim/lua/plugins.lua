@@ -30,8 +30,7 @@ return require('packer').startup(function()
         ft = 'python'
     }
     use {
-        'prettier/vim-prettier',
-        ft = 'javascript,typescript,css,less,scss,json,graphql,markdown,vue,svelte,yaml,html'
+        'prettier/vim-prettier'
     }
     use {
         'posva/vim-vue',
@@ -72,6 +71,10 @@ return require('packer').startup(function()
     use {
         'vim-python/python-syntax',
         ft = 'python'
+    }
+    use {
+        'glacambre/firenvim',
+        run = function() vim.fn['firenvim#install'](0) end 
     }
 
     -- functional

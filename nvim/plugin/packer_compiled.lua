@@ -9,23 +9,26 @@ vim.api.nvim_command('packadd packer.nvim')
 
 local no_errors, error_msg = pcall(function()
 
-  local time
-  local profile_info
-  local should_profile = false
-  if should_profile then
-    local hrtime = vim.loop.hrtime
-    profile_info = {}
-    time = function(chunk, start)
-      if start then
-        profile_info[chunk] = hrtime()
-      else
-        profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
-      end
+_G._packer = _G._packer or {}
+_G._packer.inside_compile = true
+
+local time
+local profile_info
+local should_profile = false
+if should_profile then
+  local hrtime = vim.loop.hrtime
+  profile_info = {}
+  time = function(chunk, start)
+    if start then
+      profile_info[chunk] = hrtime()
+    else
+      profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
     end
-  else
-    time = function(chunk, start) end
   end
-  
+else
+  time = function(chunk, start) end
+end
+
 local function save_profiles(threshold)
   local sorted_times = {}
   for chunk_name, time_taken in pairs(profile_info) do
@@ -38,8 +41,10 @@ local function save_profiles(threshold)
       results[i] = elem[1] .. ' took ' .. elem[2] .. 'ms'
     end
   end
+  if threshold then
+    table.insert(results, '(Only showing plugins that took longer than ' .. threshold .. ' ms ' .. 'to load)')
+  end
 
-  _G._packer = _G._packer or {}
   _G._packer.profile_output = results
 end
 
@@ -98,10 +103,20 @@ _G.packer_plugins = {
     path = "/home/ramon/.local/share/nvim/site/pack/packer/opt/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
+  firenvim = {
+    loaded = true,
+    path = "/home/ramon/.local/share/nvim/site/pack/packer/start/firenvim",
+    url = "https://github.com/glacambre/firenvim"
+  },
   ["goyo.vim"] = {
     loaded = true,
     path = "/home/ramon/.local/share/nvim/site/pack/packer/start/goyo.vim",
     url = "https://github.com/junegunn/goyo.vim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/ramon/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["markdown-preview.nvim"] = {
     commands = { "cd app && yarn install" },
@@ -110,6 +125,11 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/ramon/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
+  ["moonlight.nvim"] = {
+    loaded = true,
+    path = "/home/ramon/.local/share/nvim/site/pack/packer/start/moonlight.nvim",
+    url = "https://github.com/shaunsingh/moonlight.nvim"
   },
   nerdcommenter = {
     loaded = true,
@@ -123,6 +143,12 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/ramon/.local/share/nvim/site/pack/packer/opt/nerdtree",
     url = "https://github.com/scrooloose/nerdtree"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/ramon/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["octo.nvim"] = {
     loaded = true,
@@ -202,15 +228,10 @@ _G.packer_plugins = {
     path = "/home/ramon/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["vim-airline"] = {
+  ["tokyonight.nvim"] = {
     loaded = true,
-    path = "/home/ramon/.local/share/nvim/site/pack/packer/start/vim-airline",
-    url = "https://github.com/vim-airline/vim-airline"
-  },
-  ["vim-airline-themes"] = {
-    loaded = true,
-    path = "/home/ramon/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
-    url = "https://github.com/vim-airline/vim-airline-themes"
+    path = "/home/ramon/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["vim-devicons"] = {
     loaded = true,
@@ -257,10 +278,8 @@ _G.packer_plugins = {
     url = "https://github.com/maxmellon/vim-jsx-pretty"
   },
   ["vim-prettier"] = {
-    loaded = false,
-    needs_bufread = true,
-    only_cond = false,
-    path = "/home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier",
+    loaded = true,
+    path = "/home/ramon/.local/share/nvim/site/pack/packer/start/vim-prettier",
     url = "https://github.com/prettier/vim-prettier"
   },
   ["vim-surround"] = {
@@ -294,86 +313,44 @@ time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[au CmdUndefined cd app && yarn install ++once lua require"packer.load"({'markdown-preview.nvim'}, {}, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NERDTreeToggle lua require("packer.load")({'nerdtree'}, { cmd = "NERDTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[au CmdUndefined yarn install --frozen-lockfile --production ++once lua require"packer.load"({'vim-vue'}, {}, _G.packer_plugins)]])
 pcall(vim.cmd, [[au CmdUndefined :UpdateRemotePlugins ++once lua require"packer.load"({'semshi', 'sphinx.nvim'}, {}, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NERDTreeToggle lua require("packer.load")({'nerdtree'}, { cmd = "NERDTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[au CmdUndefined cd app && yarn install ++once lua require"packer.load"({'markdown-preview.nvim'}, {}, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType javascript,typescript,css,less,scss,json,graphql,markdown,vue,svelte,yaml,html ++once lua require("packer.load")({'vim-prettier'}, { ft = "javascript,typescript,css,less,scss,json,graphql,markdown,vue,svelte,yaml,html" }, _G.packer_plugins)]]
+vim.cmd [[au FileType python ++once lua require("packer.load")({'black', 'python-syntax'}, { ft = "python" }, _G.packer_plugins)]]
+vim.cmd [[au FileType javascript ++once lua require("packer.load")({'yats.vim', 'vim-jsx-pretty', 'vim-js'}, { ft = "javascript" }, _G.packer_plugins)]]
 vim.cmd [[au FileType vue ++once lua require("packer.load")({'vim-vue'}, { ft = "vue" }, _G.packer_plugins)]]
-vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-js', 'vim-jsx-pretty', 'yats.vim'}, { ft = "javascript" }, _G.packer_plugins)]]
 vim.cmd [[au FileType rst ++once lua require("packer.load")({'sphinx.nvim'}, { ft = "rst" }, _G.packer_plugins)]]
-vim.cmd [[au FileType python ++once lua require("packer.load")({'python-syntax', 'black'}, { ft = "python" }, _G.packer_plugins)]]
 vim.cmd [[au FileType html,jinja ++once lua require("packer.load")({'emmet-vim'}, { ft = "html,jinja" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-js/ftdetect/javascript.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-js/ftdetect/javascript.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-js/ftdetect/javascript.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/css.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/css.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/css.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/graphql.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/graphql.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/graphql.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/html.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/html.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/html.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/javascript.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/javascript.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/javascript.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/json.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/json.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/json.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/less.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/less.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/less.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/lua.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/lua.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/lua.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/markdown.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/markdown.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/markdown.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/php.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/php.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/php.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/ruby.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/ruby.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/ruby.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/scss.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/scss.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/scss.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/svelte.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/svelte.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/svelte.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/typescript.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/typescript.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/typescript.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/vue.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/vue.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/vue.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/xml.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/xml.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/xml.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/yaml.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/yaml.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/yaml.vim]], false)
+time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-vue/ftdetect/vue.vim]], true)
+vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-vue/ftdetect/vue.vim]]
+time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-vue/ftdetect/vue.vim]], false)
 time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescript.vim]], true)
 vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescript.vim]]
 time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescript.vim]], false)
 time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescriptreact.vim]], true)
 vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescriptreact.vim]]
 time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/yats.vim/ftdetect/typescriptreact.vim]], false)
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-vue/ftdetect/vue.vim]], true)
-vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-vue/ftdetect/vue.vim]]
-time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-vue/ftdetect/vue.vim]], false)
+time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-js/ftdetect/javascript.vim]], true)
+vim.cmd [[source /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-js/ftdetect/javascript.vim]]
+time([[Sourcing ftdetect script at: /home/ramon/.local/share/nvim/site/pack/packer/opt/vim-js/ftdetect/javascript.vim]], false)
 vim.cmd("augroup END")
+
+_G._packer.inside_compile = false
+if _G._packer.needs_bufread == true then
+  vim.cmd("doautocmd BufRead")
+end
+_G._packer.needs_bufread = false
+
 if should_profile then save_profiles() end
 
 end)
