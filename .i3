@@ -78,7 +78,6 @@ bar {
         -p traffic.showname=0 \
         -p traffic.format="{:.0f}" \
         -p disk.format="+{left}" \
-        -p cpu.format="92%" \
         -p memory.format="{used}" \
         -p date.format="%d/%m" \
         -p time.format="%H:%M" \
