@@ -67,13 +67,7 @@ bar {
     position top
     i3bar_command i3bar
     status_command /usr/bin/bumblebee-status \
-        -m spotify currency weather layout traffic disk cpu memory date time \
-        -p spotify.layout="spotify.song" \
-        -p currency.source="USD" \
-        -p currency.destination="BRL" \
-        -p shell.command="todoist-cli l -f @active" \
-        -p shell.interval=10 \
-        -p shell.scrolling.makewide=0 \
+        -m weather layout traffic disk cpu memory date time \
         -p weather.showcity=0 \
         -p traffic.showname=0 \
         -p traffic.format="{:.0f}" \
