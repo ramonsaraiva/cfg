@@ -87,7 +87,7 @@ if macos() then
     g.python3_host_prog = pyenv_root .. '/versions/3.9.6/bin/python'
 else
     g.python_host_prog = pyenv_root .. '/versions/2.7.18/bin/python'
-    g.python3_host_prog = pyenv_root .. '/versions/3.9.7/bin/python'
+    g.python3_host_prog = pyenv_root .. '/versions/3.10.7/bin/python'
 end
 
 g.coc_disable_startup_warning = 0
@@ -116,7 +116,7 @@ vim.api.nvim_command('nmap <silent> gr <Plug>(coc-references)')
 vim.api.nvim_command("autocmd BufWritePost *.js silent! execute ':Prettier'")
 vim.api.nvim_command("autocmd BufWritePost *.ts silent! execute ':Prettier'")
 vim.api.nvim_command("autocmd BufWritePost *.vue silent! execute ':Prettier'")
--- vim.api.nvim_command("autocmd BufWritePost *.py silent! execute ':Black'")
+vim.api.nvim_command("autocmd BufWritePost *.py silent! execute ':Black'")
 vim.api.nvim_command("autocmd FileType python set autoindent")
 vim.api.nvim_command("autocmd FileType python set smartindent")
 

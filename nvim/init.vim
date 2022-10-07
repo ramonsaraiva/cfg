@@ -33,8 +33,15 @@ let g:user_emmet_leader_key=','
 
 " vim-test
 let test#strategy = "neovim"
+let pytest_output = system("cat requirements.txt | grep pytest")
+if v:shell_error == 0
+    let test#python#runner = 'pytest'
+else
+    let test#python#runner = 'djangotest'
+endif
 let django_service = trim(system('docker-compose ps --service | grep django'))
 let g:test#python#djangotest#executable = 'docker-compose exec '.django_service.' python manage.py test'
+let g:test#python#pytest#executable = 'docker-compose exec '.django_service.' python manage.py pytest'
 
 " dockertools
 let g:dockertools_default_all = 0
