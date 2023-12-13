@@ -1,5 +1,5 @@
 set $mod Mod1
-font pango:Operator Mono 12
+font pango:Jetbrains Mono NL 12
 
 floating_modifier $mod
 
@@ -8,6 +8,7 @@ bindsym $mod+Return exec --no-startup-id kitty
 bindsym $mod+Shift+q kill
 
 bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+x exec --no-startup-id clipmenu
 
 bindsym $mod+j focus left
 bindsym $mod+k focus down

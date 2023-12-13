@@ -1,3 +1,6 @@
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:$HOME/.local/bin
+
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
     startx
 fi
@@ -28,8 +31,6 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(pyenv init --path)"
 
-export PATH=$PATH:/usr/local/bin
-
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 
@@ -37,7 +38,7 @@ export NEW_RELIC_CONFIG_FILE=~/.newrelic.ini
 export NEW_RELIC_ENVIRONMENT=development
 
 # fnm > nvm
-export PATH=~/.fnm:$PATH
+export PATH=$HOME/.local/share/fnm:$PATH
 eval "`fnm env`"
 
 export CONTAINER_ENVIRONMENT='self'
