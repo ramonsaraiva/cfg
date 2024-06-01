@@ -7,7 +7,7 @@ bindsym $mod+Return exec --no-startup-id kitty
 
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+x exec --no-startup-id clipmenu
 
 bindsym $mod+j focus left
@@ -68,10 +68,8 @@ bar {
     position top
     i3bar_command i3bar
     status_command /usr/bin/bumblebee-status \
-        -m weather layout traffic disk cpu memory date time \
+        -m weather disk cpu memory date time \
         -p weather.showcity=0 \
-        -p traffic.showname=0 \
-        -p traffic.format="{:.0f}" \
         -p disk.format="+{left}" \
         -p memory.format="{used}" \
         -p date.format="%d/%m" \
@@ -91,7 +89,7 @@ exec --no-startup-id feh --bg-scale '/home/ramon/.cfg/wp.jpg'
 exec --no-startup-id dunst
 exec --no-startup-id flameshot
 
-for_window [class="scratch-terminal"] move window to scratchpad, scratchpad show, move position 50px 0px, resize set 1200 400, border pixel 3
+for_window [class="scratch-terminal"] move window to scratchpad, scratchpad show, move position 300px 0px, resize set 1200 400, border pixel 3
 bindsym $mod+p exec kitty --class=scratch-terminal -e python3
 bindsym --release Delete exec --no-startup-id "flameshot gui"
 
