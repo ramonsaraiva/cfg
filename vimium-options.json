@@ -1,306 +1,278 @@
 {
-  "settingsVersion": "1.67",
+  "keyMappings": "map 1 createTab https://github.com\nmap 2 createTab https://consumeraffairs.atlassian.net/jira/software/c/projects/PDW/boards/282\nmap 3 createTab https://app.snowflake.com/us-west-2/fka18282/",
+  "newTabUrl": "https://google.com/",
+  "scrollStepSize": 80,
+  "grabBackFocus": true,
+  "searchEngines": "w: http://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\ny: http://www.youtube.com/results?search_query=%s Youtube\ngm: https://www.google.com/maps?q=%s Google maps\nnf: https://www.netflix.com/search?q=%s Netflix\n\nlol: https://www.probuilds.net/champions/details/%s Pro Builds\n\njira: https://consumeraffairs.atlassian.net/browse/%s JIRA\nconfluence: https://consumeraffairs.atlassian.net/wiki/search?text=%s Confluence\n\n# leadsapi\nrawlead: https://leads.consumeraffairs.com/admin/v2/lead/rawlead/%s/ LeadsAPI rawlead\nreferral: https://leads.consumeraffairs.com/admin/v2/lead/referral/%s/ LeadsAPI referral\n\n# mainsite\nct: https://www.consumeraffairs.com/admin/categories/category/?q=%s Mainsite category\nct-q: https://qa.consumeraffairs.com/admin/categories/category/?q=%s Mainsite QA category\nct-s: https://staging.consumeraffairs.com/admin/categories/category/?q=%s Mainsite Staging category\nct-l: http://localhost:21000/admin/categories/category/?q=%s Mainsite Local category\nb: https://www.consumeraffairs.com/admin/brands/campaign/?q=%s Mainsite brand\nb-q: https://qa.consumeraffairs.com/admin/brands/campaign/?q=%s Mainsite QA brand\nb-s: https://staging.consumeraffairs.com/admin/brands/campaign/?q=%s Mainsite Staging brand\nb-l: https://www.consumeraffairs.com/admin/brands/campaign/?q=%s Mainsite Local brand\nbid: http://localhost:21000/admin/brands/campaign/%s/ Mainsite brand id\nbid-q: https://qa.consumeraffairs.com/admin/brands/campaign/%s/ Mainsite QA brand id\nbid-s: https://staging.consumeraffairs.com/admin/brands/campaign/%s/ Mainsite Staging brand id\nbid-l: http://localhost:21000/admin/brands/campaign/%s/ Mainsite Local brand id\nc: https://www.consumeraffairs.com/admin/companies/campaign/?q=%s Mainsite campaign\nc-q: https://qa.consumeraffairs.com/admin/companies/campaign/?q=%s Mainsite QA campaign\nc-s: https://staging.consumeraffairs.com/admin/companies/campaign/?q=%s Mainsite Staging campaign\nc-l: http://localhost:21000/admin/companies/campaign/?q=%s Mainsite Local campaign\ncid: https://www.consumeraffairs.com/admin/companies/campaign/%s/ Mainsite campaign id\ncid-q: https://qa.consumeraffairs.com/admin/companies/campaign/%s/ Mainsite QA campaign id\ncid-s: https://staging.consumeraffairs.com/admin/companies/campaign/%s/ Mainsite Staging campaign id\ncid-l: http://localhost:21000/admin/companies/campaign/%s/ Mainsite Local campaign id\n\n# silverback\nendpoint: https://my.consumeraffairs.com/admin/landpages/endpoint/?q=%s Silverback endpoint\nendpoint-qa: https://qa-my.consumeraffairs.com/admin/landpages/endpoint/?q=%s Silverback QA endpoint\nendpoint-staging: https://staging-my.consumeraffairs.com/admin/landpages/endpoint/?q=%s Silverback Staging endpoint\nendpoint-local: http://localhost:48000/admin/landpages/endpoint/?q=%s Silverback Local endpoint\nconfig: https://my.consumeraffairs.com/admin/landpages/config/%s/change/ Silverback config\nconfig-qa: https://qa-my.consumeraffairs.com/admin/landpages/config/%s/change/ Silverback QA config\nconfig-staging: https://staging-my.consumeraffairs.com/admin/landpages/config/%s/change/ Silverback Staging config\nconfig-local: http://localhost:48000/admin/landpages/config/%s/change/ Silverback Local config\n\n# userdb\nconsumer_email: http://userdb.conaff/admin/consumers/consumer/?email=%s UserDB consumer email\nconsumer_phone: http://userdb.conaff/admin/consumers/consumer/?phone=%s UserDB consumer phone\nucid: http://userdb.conaff/admin/consumers/consumer/%s/ UserDB consumer UCID\nsession: http://userdb.conaff/admin/events/session/?encoded_key=%s UserDB session\nsession_id: http://userdb.conaff/admin/events/session/%s/ UserDB session id\nevent: http://userdb.conaff/admin/events/event/%s/ UserDB event\n\n# github org\ngorg: https://github.com/orgs/ConsumerAffairs/people?query=%s GitHub ConsumerAffairs Org\n\n# github -> consumeraffairs\ngcar: https://github.com/consumeraffairs/%s GitHub ConsumerAffairs repos\n\n# github -> consumeraffairs -> consumeraffairs\ngca: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%E2%9C%93&q=is%3Apr+%s ConsumerAffairs PR Search\ngcau: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A%s ConsumerAffairs PR Author Search\ngcaf: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%s ConsumerAffairs PR Free Search\ngcapr: https://github.com/ConsumerAffairs/consumeraffairs/pull/%s ConsumerAffairs PR ID\n\n# github -> consumeraffairs -> silverback\ngsb: https://github.com/consumeraffairs/silverback/pulls?utf8=%E2%9C%93&q=is%3Apr+%s Silverback PR Search\ngsbu: https://github.com/consumeraffairs/silverback/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A%s Silverback PR Author Search\ngsbpr: https://github.com/ConsumerAffairs/silverback/pull/%s Silverback PR ID\n\n# github -> consumeraffairs -> userdb\ngudb: https://github.com/consumeraffairs/userdb/pulls?utf8=%E2%9C%93&q=is%3Apr+%s UserDB PR Search\ngudbu: https://github.com/consumeraffairs/userdb/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A%s UserDB PR Author Search\ngudbpr: https://github.com/ConsumerAffairs/userdb/pull/%s UserDB PR ID\n\n# b64\nb64: https://www.base64%s.org/ Base64 encode/decode\n\ntv: https://br.tradingview.com/symbols/BMFBOVESPA-%s/\nc: https://eduardocavalcanti.com/?post_type%5B%5D=an_fundamentalista&s=%s",
+  "settingsVersion": "2.1.2",
   "exclusionRules": [
     {
-      "pattern": "https?://iogames.space/*",
-      "passKeys": "d"
+      "passKeys": "d",
+      "pattern": "https?://iogames.space/*"
     },
     {
-      "pattern": "https?://iogames.space/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://iogames.space/*"
     },
     {
-      "pattern": "https?://moomoo.io/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://moomoo.io/*"
     },
     {
-      "pattern": "https?://slay.one/*",
-      "passKeys": "qwerasdf"
+      "passKeys": "qwerasdf",
+      "pattern": "https?://slay.one/*"
     },
     {
-      "pattern": "https?://virtualpiano.net/*",
-      "passKeys": "qwertyuiopasdfghjkl;'[]\\zxcvbnm,./1234567890"
+      "passKeys": "qwertyuiopasdfghjkl;'[]\\zxcvbnm,./1234567890",
+      "pattern": "https?://virtualpiano.net/*"
     },
     {
-      "pattern": "https?://virtualpiano.net/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://virtualpiano.net/*"
     },
     {
-      "pattern": "https?://ide.c9.io/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://ide.c9.io/*"
     },
     {
-      "pattern": "https?://ide.c9.io/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://ide.c9.io/*"
     },
     {
-      "pattern": "https?://codebunk.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://codebunk.com/*"
     },
     {
-      "pattern": "https?://codebunk.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://codebunk.com/*"
     },
     {
-      "pattern": "https?://repl.it/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://repl.it/*"
     },
     {
-      "pattern": "https?://repl.it/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://repl.it/*"
     },
     {
-      "pattern": "https?://www.hackerrank.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://www.hackerrank.com/*"
     },
     {
-      "pattern": "https?://www.hackerrank.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://www.hackerrank.com/*"
     },
     {
-      "pattern": "https?://games.scirra.net/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://games.scirra.net/*"
     },
     {
-      "pattern": "https?://games.scirra.net/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://games.scirra.net/*"
     },
     {
-      "pattern": "https?://hordes.io/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://hordes.io/*"
     },
     {
-      "pattern": "https?://hordes.io/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://hordes.io/*"
     },
     {
-      "pattern": "https?://www.browserstack.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://www.browserstack.com/*"
     },
     {
-      "pattern": "https?://www.browserstack.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://www.browserstack.com/*"
     },
     {
-      "pattern": "https?://paper-io.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://paper-io.com/*"
     },
     {
-      "pattern": "https?://paper-io.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://paper-io.com/*"
     },
     {
-      "pattern": "https?://surviv.io/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://surviv.io/*"
     },
     {
-      "pattern": "https?://surviv.io/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://surviv.io/*"
     },
     {
-      "pattern": "https?://www.presosemcuritiba.com.br/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://www.presosemcuritiba.com.br/*"
     },
     {
-      "pattern": "https?://www.presosemcuritiba.com.br/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://www.presosemcuritiba.com.br/*"
     },
     {
-      "pattern": "https?://us-east-2.console.aws.amazon.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://us-east-2.console.aws.amazon.com/*"
     },
     {
-      "pattern": "https?://us-east-2.console.aws.amazon.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://us-east-2.console.aws.amazon.com/*"
     },
     {
-      "pattern": "https?://codeshare.io/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://codeshare.io/*"
     },
     {
-      "pattern": "https?://codeshare.io/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://codeshare.io/*"
     },
     {
-      "pattern": "https?://codeanywhere.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://codeanywhere.com/*"
     },
     {
-      "pattern": "https?://codeanywhere.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://codeanywhere.com/*"
     },
     {
-      "pattern": "https?://onlinesignature.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://onlinesignature.com/*"
     },
     {
-      "pattern": "https?://onlinesignature.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://onlinesignature.com/*"
     },
     {
-      "pattern": "https?://moomoo.io/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://moomoo.io/*"
     },
     {
-      "pattern": "https?://www.personalecho.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://www.personalecho.com/*"
     },
     {
-      "pattern": "https?://www.personalecho.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://www.personalecho.com/*"
     },
     {
-      "pattern": "https?://localhost:8888/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://localhost:8888/*"
     },
     {
-      "pattern": "https?://localhost:8888/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://localhost:8888/*"
     },
     {
-      "pattern": "https?://aws.ramonzera.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://aws.ramonzera.com/*"
     },
     {
-      "pattern": "https?://aws.ramonzera.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://aws.ramonzera.com/*"
     },
     {
-      "pattern": "https?://krunker.io/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://krunker.io/*"
     },
     {
-      "pattern": "https?://krunker.io/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://krunker.io/*"
     },
     {
-      "pattern": "https?://excalidraw.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://excalidraw.com/*"
     },
     {
-      "pattern": "https?://excalidraw.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://excalidraw.com/*"
     },
     {
-      "pattern": "https?://admin.google.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://admin.google.com/*"
     },
     {
-      "pattern": "https?://admin.google.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://admin.google.com/*"
     },
     {
-      "pattern": "https?://app.clubhouse.io/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://app.clubhouse.io/*"
     },
     {
-      "pattern": "https?://app.clubhouse.io/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://app.clubhouse.io/*"
     },
     {
-      "pattern": "https?://stackedit.io/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://stackedit.io/*"
     },
     {
-      "pattern": "https?://codeinterview.io/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://codeinterview.io/*"
     },
     {
-      "pattern": "https?://codeinterview.io/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://codeinterview.io/*"
     },
     {
-      "pattern": "https?://www.codingame.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://www.codingame.com/*"
     },
     {
-      "pattern": "https?://www.codingame.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://www.codingame.com/*"
     },
     {
-      "pattern": "https?://consumeraffairs.atlassian.net/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://consumeraffairs.atlassian.net/*"
     },
     {
-      "pattern": "https?://skyline.github.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://skyline.github.com/*"
     },
     {
-      "pattern": "https?://skyline.github.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://skyline.github.com/*"
     },
     {
-      "pattern": "https?://www.3daimtrainer.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://www.3daimtrainer.com/*"
     },
     {
-      "pattern": "https?://www.3daimtrainer.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://www.3daimtrainer.com/*"
     },
     {
-      "pattern": "https?://promptriddle.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://github.dev/*"
     },
     {
-      "pattern": "https?://promptriddle.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://github.dev/*"
     },
     {
-      "pattern": "https?://alpha6.madworldmmo.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://js13kgames.com/*"
     },
     {
-      "pattern": "https?://alpha6.madworldmmo.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://js13kgames.com/*"
     },
     {
-      "pattern": "https?://play.retro-mmo.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "https?://app.excalidraw.com/*"
     },
     {
-      "pattern": "https?://coinmarketcap.com/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "https?://app.excalidraw.com/*"
     },
     {
-      "pattern": "https?://vim-adventures.com/*",
-      "passKeys": "*"
+      "passKeys": "*",
+      "pattern": "about:blank*"
     },
     {
-      "pattern": "https?://vim-adventures.com/*",
-      "passKeys": ""
-    },
-    {
-      "pattern": "https?://www.typingtest.com/*",
-      "passKeys": "*"
-    },
-    {
-      "pattern": "https?://www.typingtest.com/*",
-      "passKeys": ""
-    },
-    {
-      "pattern": "https?://ceac.state.gov/*",
-      "passKeys": "*"
-    },
-    {
-      "pattern": "https?://ceac.state.gov/*",
-      "passKeys": ""
+      "passKeys": "",
+      "pattern": "about:blank*"
     }
-  ],
-  "filterLinkHints": false,
-  "waitForEnterForFilteredHints": true,
-  "hideHud": false,
-  "keyMappings": "map 1 createTab https://consumeraffairs.atlassian.net/secure/RapidBoard.jspa?rapidView=218\nmap 2 createTab https://consumeraffairs.atlassian.net/secure/RapidBoard.jspa?rapidView=222",
-  "linkHintCharacters": "sadfjklewcmpgh",
-  "linkHintNumbers": "0123456789",
-  "newTabUrl": "https://google.com/",
-  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
-  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
-  "regexFindMode": false,
-  "ignoreKeyboardLayout": false,
-  "scrollStepSize": 80,
-  "smoothScroll": true,
-  "grabBackFocus": false,
-  "searchEngines": "w: http://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\ny: http://www.youtube.com/results?search_query=%s Youtube\ngm: https://www.google.com/maps?q=%s Google maps\nnf: https://www.netflix.com/search?q=%s Netflix\n\nlol: https://www.probuilds.net/champions/details/%s Pro Builds\n\njira: https://consumeraffairs.atlassian.net/browse/%s\nconfluence: https://consumeraffairs.atlassian.net/wiki/search?text=%s\n\n# mainsite campaigns\ncampaign: https://www.consumeraffairs.com/admin/companies/campaign/?q=%s\ncampaign-qa: https://qa.consumeraffairs.com/admin/companies/campaign/?q=%s\ncampaign-staging: https://staging.consumeraffairs.com/admin/companies/campaign/?q=%s\ncampaign-local: campaign-qa: http://localhost:28080/admin/companies/campaign/?q=%s\n\n# silverback endpoints\nendpoint: https://my.consumeraffairs.com/admin/landpages/endpoint/?q=%s Silverback endpoint\nendpoint-qa: https://qa-my.consumeraffairs.com/admin/landpages/endpoint/?q=%s Silverback QA endpoint\nendpoint-staging: https://staging-my.consumeraffairs.com/admin/landpages/endpoint/?q=%s Silverback Staging endpoint\nendpoint-local: http://localhost:48000/admin/landpages/endpoint/?q=%s Silverback Local endpoint\n\n# silverback configs\nconfig: https://my.consumeraffairs.com/admin/landpages/config/%s/change/ Silverback config\nconfig-qa: https://qa-my.consumeraffairs.com/admin/landpages/config/%s/change/ Silverback QA config\nconfig-staging: https://staging-my.consumeraffairs.com/admin/landpages/config/%s/change/ Silverback Staging config\nconfig-local: http://localhost:48000/admin/landpages/config/%s/change/ Silverback Local config\n\n# github org\ngorg: https://github.com/orgs/ConsumerAffairs/people?query=%s GitHub ConsumerAffairs Org\n\n# github -> consumeraffairs\ngcar: https://github.com/consumeraffairs/%s GitHub ConsumerAffairs repos\n\n# github -> consumeraffairs -> consumeraffairs\ngca: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%E2%9C%93&q=is%3Apr+%s ConsumerAffairs PR Search\ngcau: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A%s ConsumerAffairs PR Author Search\ngcaf: https://github.com/consumeraffairs/consumeraffairs/pulls?utf8=%s ConsumerAffairs PR Free Search\ngcapr: https://github.com/ConsumerAffairs/consumeraffairs/pull/%s ConsumerAffairs PR ID\n\n# github -> consumeraffairs -> silverback\ngsb: https://github.com/consumeraffairs/silverback/pulls?utf8=%E2%9C%93&q=is%3Apr+%s Silverback PR Search\ngsbu: https://github.com/consumeraffairs/silverback/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A%s Silverback PR Author Search\ngsbpr: https://github.com/ConsumerAffairs/silverback/pull/%s Silverback PR ID\n\n# github -> consumeraffairs -> userdb\ngudb: https://github.com/consumeraffairs/userdb/pulls?utf8=%E2%9C%93&q=is%3Apr+%s UserDB PR Search\ngudbu: https://github.com/consumeraffairs/userdb/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A%s UserDB PR Author Search\ngudbpr: https://github.com/ConsumerAffairs/userdb/pull/%s UserDB PR ID\n\n# b64\nb64: https://www.base64%s.org/ Base64 encode/decode\n\ntv: https://br.tradingview.com/symbols/BMFBOVESPA-%s/\nc: https://eduardocavalcanti.com/?post_type%5B%5D=an_fundamentalista&s=%s",
-  "searchUrl": "https://www.google.com/search?q=",
-  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
+  ]
 }
