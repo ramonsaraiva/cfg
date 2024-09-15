@@ -32,6 +32,7 @@ bindsym $mod+Shift+Right move right
 
 bindsym $mod+f fullscreen toggle
 bindsym $mod+e layout toggle split
+bindsym $mod+t layout toggle tabbed split-v
 
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
