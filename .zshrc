@@ -70,5 +70,6 @@ source $HOME/.cargo/env
 
 export PATH=$PATH:/snap/bin
 export PATH=$PATH:"$HOME/.local/bin"
+export PATH=$PATH:"$HOME/Applications"
 
 set -o vi
