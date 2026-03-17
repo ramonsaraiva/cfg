@@ -1,7 +1,3 @@
-function ca() {
-    cd ~/src/consumeraffairs
-}
-
 function brands() {
     cd ~/src/brands
 }
@@ -22,13 +18,6 @@ function m() {
     python manage.py $@
 }
 
-function ca() {
-    (
-        cd ~/src/ca/env
-        make $@
-    )
-}
-
 function twingate_auth() {
     xdg-open "$(twingate status | grep -Eo "https://[^ >]+" | head -n1)"
 }
@@ -36,7 +25,6 @@ function twingate_auth() {
 alias vim="nvim"
 alias t="todoist-cli"
 
-alias ca=ca
 alias brands=brands
 alias leads=leads
 alias catracking=catracking
@@ -57,7 +45,11 @@ alias di="d images"
 alias dl="d logs"
 alias ds="docker stop $(docker ps -a -q)"
 
-alias dc=docker-compose
+function dc() {
+  COMPOSE_COMPATIBILITY=1 docker-compose $@
+}
+
+alias dc=dc
 alias dcu="dc up"
 alias dcd="dc down"
 alias dcp="dc ps"
@@ -74,6 +66,9 @@ function sshkey() {
 alias sshkey=sshkey
 
 alias restoresb="gpg -d $1 | zcat | docker exec -i silverback_postgres_1 psql -U silverback"
-alias pyb="git diff --name-status | cut -f2 | grep '.py' | xargs black"
 alias -g Z="| fzf"
+alias pyb="git diff --name-status | cut -f2 | grep '.py' | xargs black"
 alias dns="echo 127.0.0.1 | sudo tee /etc/resolv.conf"
+
+alias ai="claude-sandbox --dangerously-skip-permissions"
+alias aic="claude-sandbox --dangerously-skip-permissions --continue"

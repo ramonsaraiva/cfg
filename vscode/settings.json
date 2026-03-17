@@ -12,7 +12,6 @@
     "editor.guides.bracketPairs": "active",
     "editor.bracketPairColorization.enabled": true,
     "window.title": "${folderName}/${activeEditorShort}",
-    "workbench.editor.enablePreview": false,
     "workbench.sideBar.location": "right",
     "workbench.editor.limit.enabled": true,
     "workbench.editor.limit.value": 3,
@@ -25,7 +24,6 @@
     "editor.fontLigatures": true,
     "editor.minimap.enabled": false,
     "window.commandCenter": 1,
-    "workbench.colorTheme": "Moonlight II",
     "editor.fontFamily": "Jetbrains Mono NL",
     "editor.fontSize": 16,
     "files.exclude": {
@@ -48,7 +46,7 @@
         "**/dist/**": true
     },
     "find-it-faster.general.useTerminalInEditor": true,
-    "find-it-faster.general.killTerminalAfterUse": true,
+    "find-it-faster.general.killTerminalAfterUse": false,
     "find-it-faster.advanced.disableStartupChecks": true,
     "find-it-faster.findWithinFiles.previewWindowConfig": "right:55%:wrap",
     "find-it-faster.findWithinFiles.previewCommand": "bat --style=numbers --color=always --line-range=:100 {1}  --highlight-line {2}",
@@ -70,16 +68,6 @@
         "<C-z>": false
     },
     "vim.normalModeKeyBindings": [
-        {
-
-            "before": [
-                "<leader>",
-                "t"
-            ],
-            "commands": [
-                "workbench.view.explorer"
-            ]
-        },
         {
             "before": [
                 "g",
@@ -169,7 +157,7 @@
         {
             "before": [
                 "leader",
-                "f",
+                "f"
             ],
             "commands": [
                 "find-it-faster.findFiles"
@@ -182,6 +170,46 @@
             ],
             "commands": [
                 "find-it-faster.findWithinFiles"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "t",
+                "n"
+            ],
+            "commands": [
+                "python.djangoTestRunner.runMethodTests"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "t",
+                "f"
+            ],
+            "commands": [
+                "python.djangoTestRunner.runFileTests"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "t",
+                "c"
+            ],
+            "commands": [
+                "python.djangoTestRunner.runClassTests"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "t",
+                "a"
+            ],
+            "commands": [
+                "python.djangoTestRunner.runAppTests"
             ]
         },
     ],
@@ -198,4 +226,12 @@
     "zenMode.hideActivityBar": false,
     "zenMode.centerLayout": false,
     "zenMode.hideStatusBar": false,
+    "editor.folding": false,
+    "python.djangoTestRunner.manageProgram": "~/.local/bin/ca magictest",
+    "workbench.editor.enablePreview": false,
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "claudeCode.preferredLocation": "panel"
 }
